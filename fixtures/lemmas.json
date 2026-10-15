@@ -1,0 +1,30 @@
+{
+  "oewn-2025": [
+    "write", "writer", "writing", "written", "book", "bank", "light", "go", "run",
+    "writ", "writhe", "wright", "write off", "write-off", "writing desk", "writing paper",
+    "bookcase", "booking", "bookkeeper", "booklet", "bookmark", "bookshop", "bookworm", "bookish",
+    "banker", "banking", "bankrupt", "bankbook", "banknote",
+    "lighthouse", "lighting", "lightning", "lightweight", "lighter", "lightly",
+    "goal", "goat", "god", "gold", "golden", "good", "goodbye", "gone",
+    "runner", "running", "runway", "rung",
+    "read", "reader", "reading", "dictionary", "word", "wordy", "work", "worker", "world",
+    "learn", "learner", "language", "letter", "library", "librarian", "line", "lion", "love", "lovely",
+    "make", "man", "map", "market", "moon", "night", "note", "notebook", "page", "paper", "pen", "pencil",
+    "school", "sea", "sun", "table", "teach", "teacher", "time", "tree", "water", "way", "white", "window",
+    "wise", "wit", "woman", "wood", "wool"
+  ],
+  "wiktionary-ar-en": [
+    "كَتَبَ", "كِتَاب", "كَاتِب", "مَكْتَب", "مَكْتَبَة", "كِتَابَة", "مَكْتُوب",
+    "أَكَلَ", "إِسْلَام", "آمَنَ", "مُسْتَشْفًى", "مَدْرَسَة", "قَرَأَ", "عِلْم",
+    "كَاتَبَ", "كُتَيِّب", "قَلَم", "دَرَسَ", "مُدَرِّس", "عَالِم", "مُعَلِّم", "قِرَاءَة", "قُرْآن",
+    "بَيْت", "بَاب", "مَاء", "شَمْس", "قَمَر", "لَيْل", "يَوْم", "رَجُل", "اِمْرَأَة", "وَلَد", "بِنْت",
+    "أَب", "أُمّ", "كَبِير", "صَغِير", "جَمِيل", "لُغَة", "كَلِمَة", "قَامُوس", "مَعْنَى",
+    "سُؤَال", "جَوَاب", "مَسْؤُول", "رِسَالَة", "عَلَى"
+  ],
+  "wiktionary-en": [
+    "write", "writer", "writing", "written", "wrote", "book", "bank", "light", "go", "went", "run", "serendipity",
+    "writ", "writhe", "bookcase", "bookmark", "banker", "lighthouse", "lightning", "goal", "good", "gone", "ran",
+    "runner", "running", "read", "reader", "dictionary", "word", "work", "world", "learn", "language", "letter",
+    "library", "pen", "school", "teacher", "water", "window"
+  ]
+}

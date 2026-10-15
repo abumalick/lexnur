@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+import { type Lang, pathFor, ui } from "../i18n";
+
+const { lang } = Astro.props as { lang: Lang };
+
+const content = {
+  en: {
+    title: "Lexnur — free offline dictionaries",
+    heading: "Dictionaries that work without a connection",
+    lead: "Lexnur is a free dictionary app for Android and iOS. Pick the dictionaries you need, download them once, and look up words anywhere — no internet required.",
+    features: [
+      ["Fully offline", "Once a dictionary is downloaded, every search runs on your device."],
+      ["Pick what you need", "Choose monolingual or translation dictionaries for Arabic, English and other languages. Install only the ones you use."],
+      ["Fast search", "Results and autocomplete suggestions appear as you type."],
+      ["Private and free", "No account, no ads, no tracking."],
+    ],
+    links: "Read the privacy policy or get support:",
+  },
+  ar: {
+    title: "Lexnur — قواميس مجانية تعمل دون اتصال",
+    heading: "قواميس تعمل دون اتصال بالإنترنت",
+    lead: "Lexnur تطبيق قواميس مجاني لأندرويد وiOS. اختر القواميس التي تحتاجها، ونزّلها مرة واحدة، وابحث عن الكلمات في أي مكان دون الحاجة إلى الإنترنت.",
+    features: [
+      ["يعمل دون اتصال", "بعد تنزيل القاموس يجري كل بحث على جهازك."],
+      ["اختر ما تحتاجه", "قواميس أحادية اللغة وقواميس ترجمة للعربية والإنجليزية ولغات أخرى. ثبّت ما تستعمله فقط."],
+      ["بحث سريع", "تظهر النتائج واقتراحات الإكمال التلقائي أثناء الكتابة."],
+      ["خاص ومجاني", "بلا حساب، وبلا إعلانات، وبلا تتبّع."],
+    ],
+    links: "اطّلع على سياسة الخصوصية أو تواصل مع الدعم:",
+  },
+}[lang];
+---
+
+<Base lang={lang} page="home" title={content.title} description={ui[lang].tagline}>
+  <h1>{content.heading}</h1>
+  <p class="lead">{content.lead}</p>
+  <div class="cards">
+    {content.features.map(([title, text]) => (
+      <section class="card">
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </section>
+    ))}
+  </div>
+  <p class="muted">
+    {content.links}
+    <a href={pathFor(lang, "privacy")}>{ui[lang].nav.privacy}</a> ·
+    <a href={pathFor(lang, "support")}>{ui[lang].nav.support}</a>
+  </p>
+</Base>

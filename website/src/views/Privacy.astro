@@ -1,0 +1,86 @@
+---
+import Base from "../layouts/Base.astro";
+import { type Lang, DOWNLOAD_HOST, EMAIL } from "../i18n";
+
+const { lang } = Astro.props as { lang: Lang };
+---
+
+{lang === "en" ? (
+  <Base lang="en" page="privacy" title="Privacy policy — Lexnur" description="Lexnur does not collect personal data.">
+    <h1>Privacy policy</h1>
+    <p class="muted">Last updated: 10 October 2026</p>
+    <p class="lead">Lexnur does not collect, store or share any personal data.</p>
+
+    <h2>What the app does not do</h2>
+    <ul>
+      <li>No accounts or sign-in.</li>
+      <li>No advertising.</li>
+      <li>No analytics, tracking or usage statistics.</li>
+      <li>Your searches never leave your device.</li>
+    </ul>
+
+    <h2>What the app downloads</h2>
+    <p>
+      The app connects to the internet only to download the list of available dictionaries (the catalog) and the
+      dictionary packages you choose to install, from <code>{DOWNLOAD_HOST}</code>. These requests contain no account,
+      identifier or information about what you search.
+    </p>
+    <p>
+      These files, and this website, are served by Cloudflare. As part of delivering them, Cloudflare may log technical
+      information such as your IP address, under
+      <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>. We do not use this information
+      to identify or track you.
+    </p>
+
+    <h2>Data on your device</h2>
+    <p>
+      Downloaded dictionaries and your app settings are stored only on your device. Uninstalling the app removes them.
+    </p>
+
+    <h2>Children</h2>
+    <p>Lexnur collects no personal data from anyone, including children.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be published on this page with a new date.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+  </Base>
+) : (
+  <Base lang="ar" page="privacy" title="سياسة الخصوصية — Lexnur" description="لا يجمع Lexnur أي بيانات شخصية.">
+    <h1>سياسة الخصوصية</h1>
+    <p class="muted">آخر تحديث: 10 أكتوبر 2026</p>
+    <p class="lead">لا يجمع Lexnur أي بيانات شخصية، ولا يخزّنها، ولا يشاركها.</p>
+
+    <h2>ما لا يفعله التطبيق</h2>
+    <ul>
+      <li>لا حسابات ولا تسجيل دخول.</li>
+      <li>لا إعلانات.</li>
+      <li>لا أدوات تحليل ولا تتبّع ولا إحصاءات استخدام.</li>
+      <li>عمليات البحث التي تجريها لا تغادر جهازك أبدًا.</li>
+    </ul>
+
+    <h2>ما ينزّله التطبيق</h2>
+    <p>
+      لا يتصل التطبيق بالإنترنت إلا لتنزيل قائمة القواميس المتاحة (الفهرس) وحزم القواميس التي تختار تثبيتها، من
+      <code dir="ltr">{DOWNLOAD_HOST}</code>. ولا تتضمن هذه الطلبات أي حساب أو معرّف أو معلومات عمّا تبحث عنه.
+    </p>
+    <p>
+      تُقدَّم هذه الملفات وهذا الموقع عبر Cloudflare، وقد تسجّل Cloudflare أثناء تقديمها معلومات تقنية مثل عنوان IP الخاص
+      بك، وفقًا <a href="https://www.cloudflare.com/privacypolicy/">لسياسة الخصوصية الخاصة بـ Cloudflare</a>. ولا نستعمل
+      هذه المعلومات للتعرّف عليك أو تتبّعك.
+    </p>
+
+    <h2>البيانات على جهازك</h2>
+    <p>تُخزَّن القواميس التي تنزّلها وإعدادات التطبيق على جهازك فقط، وتُحذف عند إلغاء تثبيت التطبيق.</p>
+
+    <h2>الأطفال</h2>
+    <p>لا يجمع Lexnur أي بيانات شخصية من أي أحد، بما في ذلك الأطفال.</p>
+
+    <h2>التغييرات</h2>
+    <p>إذا تغيّرت هذه السياسة فستُنشر النسخة الجديدة في هذه الصفحة مع تاريخ جديد.</p>
+
+    <h2>التواصل</h2>
+    <p>للاستفسار عن هذه السياسة: <a href={`mailto:${EMAIL}`} dir="ltr">{EMAIL}</a></p>
+  </Base>
+)}

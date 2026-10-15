@@ -1,0 +1,174 @@
+---
+import { type Lang, type PageKey, pathFor, ui } from "../i18n";
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  title: string;
+  description: string;
+}
+
+const { lang, page, title, description } = Astro.props;
+const t = ui[lang];
+const other = t.switchLang;
+const pages: PageKey[] = ["home", "privacy", "support"];
+---
+
+<!doctype html>
+<html lang={lang} dir={t.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={new URL(pathFor(lang, page), Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(pathFor("en", page), Astro.site)} />
+    <link rel="alternate" hreflang="ar" href={new URL(pathFor("ar", page), Astro.site)} />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href={pathFor(lang, "home")}>
+        <img src="/favicon.svg" alt="" width="28" height="28" />
+        <span>Lexnur</span>
+      </a>
+      <nav>
+        {pages.map((p) => (
+          <a href={pathFor(lang, p)} aria-current={p === page ? "page" : undefined}>
+            {t.nav[p]}
+          </a>
+        ))}
+        <a class="lang" href={pathFor(other, page)} lang={other} hreflang={other}>
+          {t.switchLabel}
+        </a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>{t.footer}</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #1c1b19;
+    --muted: #5d5a53;
+    --accent: #0f6b5c;
+    --card: #ffffff;
+    --border: #e4e0d6;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413;
+      --fg: #ecebe6;
+      --muted: #a7a49b;
+      --accent: #5cc7b1;
+      --card: #1d1d1b;
+      --border: #33322e;
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans Arabic", Tahoma, sans-serif;
+  }
+  html[dir="rtl"] body {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  header,
+  main,
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 20px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--fg);
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav a[aria-current="page"] {
+    color: var(--fg);
+    font-weight: 600;
+  }
+  nav a:hover {
+    color: var(--accent);
+  }
+  a {
+    color: var(--accent);
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 32px 0 12px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin: 32px 0 8px;
+  }
+  .lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
+  .muted {
+    color: var(--muted);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 28px 0;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card h2 {
+    margin: 0 0 4px;
+    font-size: 1.05rem;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 56px;
+    padding-block: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>

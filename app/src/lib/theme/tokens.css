@@ -1,0 +1,25 @@
+@import '@fontsource/noto-naskh-arabic/400.css';
+@import '@fontsource/noto-naskh-arabic/700.css';
+@import '@fontsource/noto-serif/400.css';
+@import '@fontsource/noto-serif/700.css';
+
+:root {
+  --font-ui: system-ui, -apple-system, Roboto, "Noto Sans", sans-serif;
+  --font-headword: "Noto Serif", Georgia, serif;
+  --font-arabic: "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font-ja: "Noto Serif CJK JP", "Hiragino Mincho ProN", serif;
+  --font-zh: "Noto Serif CJK SC", "Songti SC", serif;
+  --safe-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+  --safe-bottom: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
+  --safe-start: var(--safe-area-inset-left, env(safe-area-inset-left, 0px));
+  --safe-end: var(--safe-area-inset-right, env(safe-area-inset-right, 0px));
+  --entry-scale: 1;
+  --radius: 12px;
+  --tap: 48px;
+}
+
+[lang="ar"], .ar { font-family: var(--font-arabic); line-height: 1.8; }
+.headword { font-family: var(--font-headword); font-weight: 700; }
+.headword[lang="ar"] { font-family: var(--font-arabic); }
+[lang="ja"], .headword[lang="ja"] { font-family: var(--font-ja); }
+[lang="zh"], .headword[lang="zh"] { font-family: var(--font-zh); }

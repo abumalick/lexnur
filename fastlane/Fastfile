@@ -1,0 +1,208 @@
+require "open3"
+
+ROOT = File.expand_path("..", __dir__)
+PLAY_KEY = File.expand_path("~/.config/lexnur/play-store-credentials.json")
+AAB = "app/android/app/build/outputs/bundle/release/app-release.aab"
+KEY_PROPERTIES = "#{ROOT}/app/android/key.properties"
+
+# Release builds must not ship Capacitor's debug bridge logging (C7)
+def check_release_config(path)
+  config = File.read(path)
+  UI.user_error!("#{path} does not set loggingBehavior \"none\"; unset LEXNUR_DEBUG and re-run cap sync") unless config.include?('"loggingBehavior": "none"')
+end
+
+def build_web_and_sync(platform)
+  ENV.delete("LEXNUR_DEBUG")
+  sh("cd #{ROOT} && pnpm install --frozen-lockfile && pnpm --filter @lexnur/app build && pnpm --filter @lexnur/app exec cap sync #{platform}")
+end
+
+platform :android do
+  desc "Check that the service account key can reach the Play Console"
+  lane :validate_credentials do
+    validate_play_store_json_key(json_key: PLAY_KEY)
+  end
+
+  desc "Download the listing currently on the Play Store into fastlane/metadata/android"
+  lane :download_metadata do
+    download_from_play_store
+  end
+
+  desc "Build the release bundle (main checkout only)"
+  lane :build do
+    UI.user_error!("key.properties is missing: release builds run from the main checkout (see docs/RELEASING.md)") unless File.exist?(KEY_PROPERTIES)
+    build_web_and_sync("android")
+    check_release_config("#{ROOT}/app/android/app/src/main/assets/capacitor.config.json")
+    sh("cd #{ROOT}/app/android && ./gradlew bundleRelease")
+  end
+
+  desc "Upload the release bundle to internal testing (status: completed or draft)"
+  lane :internal do |options|
+    UI.user_error!("key.properties is missing: release builds run from the main checkout (see docs/RELEASING.md)") unless File.exist?(KEY_PROPERTIES)
+    UI.user_error!("#{AAB} not found: run just android-release") unless File.exist?("#{ROOT}/#{AAB}")
+    # Play rejects native libraries that are not 16 KB page-aligned for targetSdk 35+, and requires a minimum targetSdk
+    sh("bash", "#{ROOT}/scripts/check-android-release.sh", "#{ROOT}/#{AAB}")
+    supply(
+      aab: AAB,
+      track: "internal",
+      release_status: options[:status] || "draft",
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      # `validate_only:true` has Google check the whole upload and then discards it
+      validate_only: options[:validate_only] || false
+    )
+  end
+
+  desc "Upload the listing, images and screenshots to the internal release, without a new release"
+  lane :upload_metadata do
+    gradle = File.read("#{ROOT}/app/android/app/build.gradle")
+    version_code = gradle[/^\s*versionCode\s+(\d+)/, 1]
+    UI.user_error!("versionCode not found in app/android/app/build.gradle") unless version_code
+
+    # supply attaches the listing to a release on the track and fails when none holds the version code
+    supply(
+      track: "internal",
+      version_code: version_code.to_i,
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_changelogs: true,
+      sync_image_upload: true
+    )
+  end
+end
+
+platform :ios do
+  def api_key
+    app_store_connect_api_key(
+      key_id: ENV["APP_STORE_KEY_ID"],
+      issuer_id: ENV["APP_STORE_ISSUER_ID"],
+      key_filepath: "#{ROOT}/fastlane/AuthKey_#{ENV['APP_STORE_KEY_ID']}.p8"
+    )
+  end
+
+  # The archive is left unsigned and the export is signed with Apple's cloud-managed distribution
+  # certificate through the API key, so no signing identity is needed in the local keychain
+  # (which is locked in SSH sessions). The repository stays the source of truth for the version.
+  def build_store_ipa
+    # Xcode's IPA export calls /usr/bin/rsync, which resolves its server side through PATH;
+    # Homebrew's rsync 3.x rejects the flags openrsync sends, so pin the server side to openrsync
+    shim = "#{ROOT}/.tmp/fastlane-bin"
+    FileUtils.mkdir_p(shim)
+    File.delete("#{shim}/rsync") if File.symlink?("#{shim}/rsync")
+    File.symlink("/usr/bin/rsync", "#{shim}/rsync")
+    ENV["PATH"] = "#{shim}:#{ENV.fetch('PATH', '')}"
+
+    build_web_and_sync("ios")
+    check_release_config("#{ROOT}/app/ios/App/App/capacitor.config.json")
+
+    build_dir = "#{ROOT}/.tmp/ios-build"
+    archive = "#{build_dir}/Lexnur.xcarchive"
+    FileUtils.rm_rf(build_dir)
+    FileUtils.mkdir_p(build_dir)
+    File.write("#{build_dir}/ExportOptions.plist", <<~PLIST)
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0"><dict>
+        <key>method</key><string>app-store-connect</string>
+        <key>destination</key><string>export</string>
+        <key>signingStyle</key><string>automatic</string>
+        <key>teamID</key><string>#{ENV['APPLE_TEAM_ID']}</string>
+        <key>uploadSymbols</key><true/>
+        <key>manageAppVersionAndBuildNumber</key><false/>
+      </dict></plist>
+    PLIST
+    sh("xcodebuild", "-project", "#{ROOT}/app/ios/App/App.xcodeproj", "-scheme", "App",
+       "-configuration", "Release", "-destination", "generic/platform=iOS",
+       "-archivePath", archive, "archive",
+       "CODE_SIGNING_ALLOWED=NO", "CODE_SIGNING_REQUIRED=NO", "CODE_SIGN_IDENTITY=",
+       "DEVELOPMENT_TEAM=#{ENV.fetch('APPLE_TEAM_ID')}")
+    sh("xcodebuild", "-exportArchive", "-archivePath", archive,
+       "-exportOptionsPlist", "#{build_dir}/ExportOptions.plist", "-exportPath", build_dir,
+       "-allowProvisioningUpdates",
+       "-authenticationKeyPath", "#{ROOT}/fastlane/AuthKey_#{ENV['APP_STORE_KEY_ID']}.p8",
+       "-authenticationKeyID", ENV["APP_STORE_KEY_ID"],
+       "-authenticationKeyIssuerID", ENV["APP_STORE_ISSUER_ID"])
+    ipa = Dir["#{build_dir}/*.ipa"].first || UI.user_error!("The export produced no IPA")
+    verify_ipa_version(ipa)
+    ipa
+  end
+
+  def read_pbxproj
+    File.read("#{ROOT}/app/ios/App/App.xcodeproj/project.pbxproj")
+  end
+
+  def marketing_version
+    read_pbxproj[/MARKETING_VERSION = ([^;]+);/, 1] || UI.user_error!("MARKETING_VERSION not found in project.pbxproj")
+  end
+
+  # Refuses an IPA whose version differs from the project's (bump-version.sh is the source of truth)
+  def verify_ipa_version(ipa)
+    payload = "#{File.dirname(ipa)}/unzipped"
+    sh("unzip", "-q", "-o", ipa, "-d", payload)
+    info = "#{Dir["#{payload}/Payload/*.app"].first}/Info.plist"
+    built = %w[CFBundleShortVersionString CFBundleVersion].map do |key|
+      out, status = Open3.capture2("/usr/libexec/PlistBuddy", "-c", "Print :#{key}", info)
+      UI.user_error!("could not read #{key} from the IPA") unless status.success?
+      out.strip
+    end
+    pbxproj = read_pbxproj
+    project = [pbxproj[/MARKETING_VERSION = ([^;]+);/, 1], pbxproj[/CURRENT_PROJECT_VERSION = ([^;]+);/, 1]]
+    UI.user_error!("IPA is #{built.join(' (')}), project is #{project.join(' (')})") unless built == project
+    UI.success("IPA version #{built[0]} (#{built[1]})")
+  end
+
+  # An unset key means a manual export-compliance answer for every TestFlight build (C10.3)
+  def check_export_compliance
+    plist = "#{ROOT}/app/ios/App/App/Info.plist"
+    out, status = Open3.capture2("/usr/libexec/PlistBuddy", "-c", "Print :ITSAppUsesNonExemptEncryption", plist)
+    UI.user_error!("#{plist} must set ITSAppUsesNonExemptEncryption to false (contracts C10.3)") unless status.success? && out.strip == "false"
+  end
+
+  desc "Build and upload to TestFlight (run on macOS, from the main checkout)"
+  lane :beta do
+    check_export_compliance
+    upload_to_testflight(
+      api_key: api_key,
+      ipa: build_store_ipa,
+      skip_waiting_for_build_processing: true
+    )
+  end
+
+  desc "Upload the listing and screenshots without a binary and without submitting"
+  lane :upload_metadata do
+    deliver(
+      api_key: api_key,
+      skip_binary_upload: true,
+      app_version: marketing_version,
+      metadata_path: "#{ROOT}/fastlane/metadata/ios",
+      screenshots_path: "#{ROOT}/fastlane/screenshots/ios",
+      overwrite_screenshots: true,
+      submit_for_review: false,
+      automatic_release: false,
+      force: true,
+      run_precheck_before_submit: false,
+      precheck_include_in_app_purchases: false
+    )
+  end
+
+  desc "Download the listing currently on the App Store"
+  lane :download_metadata do
+    # deliver's download command only takes the key as a JSON file
+    key_json = "#{ROOT}/fastlane/.api_key.json"
+    File.write(key_json, {
+      key_id: ENV["APP_STORE_KEY_ID"],
+      issuer_id: ENV["APP_STORE_ISSUER_ID"],
+      key: File.read("#{ROOT}/fastlane/AuthKey_#{ENV['APP_STORE_KEY_ID']}.p8")
+    }.to_json)
+    sh("cd #{ROOT} && bundle exec fastlane deliver download_metadata --force --api_key_path #{key_json} " \
+       "--metadata_path fastlane/metadata/ios --app_identifier com.lexnur")
+  ensure
+    File.delete(key_json) if key_json && File.exist?(key_json)
+  end
+
+  desc "Print the latest TestFlight build number"
+  lane :latest_build do
+    number = latest_testflight_build_number(api_key: api_key, app_identifier: "com.lexnur")
+    UI.message("Latest TestFlight build: #{number}")
+  end
+end

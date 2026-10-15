@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search and suggestions</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; line-height: 1.45; background: #fff; color: #000; }
+  h1 { font-size: 18px; } .note { font-size: 13px; color: #555; max-width: 70ch; }
+  .screens { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .phone { width: 360px; max-width: 100%; min-height: 560px; border: 2px solid #000; border-radius: 16px; overflow: hidden; }
+  .cap { font-size: 12px; font-weight: 600; margin: 0 0 6px; }
+  .top { padding: 12px 16px 8px; border-bottom: 1px solid #000; }
+  .field { display: flex; align-items: center; gap: 8px; border: 1px solid #000; border-radius: 24px; padding: 0 12px; min-height: 48px; }
+  .field input { flex: 1; border: 0; font: inherit; font-size: 17px; outline: none; min-width: 0; }
+  .field button { border: 0; background: none; font-size: 18px; min-width: 32px; min-height: 32px; }
+  .scope { margin-top: 8px; display: inline-block; border: 1px solid #000; border-radius: 8px; padding: 4px 10px; font-size: 13px; background: #fff; font: inherit; font-size: 13px; }
+  .hdr { padding: 8px 16px 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #444; }
+  .row { display: block; padding: 8px 16px; border-bottom: 1px solid #ddd; min-height: 56px; cursor: pointer; }
+  .l1 { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .hw { font-size: 18px; font-weight: 600; }
+  .hw[lang=ar] { font-family: "Noto Naskh Arabic", "Geeza Pro", serif; font-size: 22px; line-height: 1.8; }
+  .meta { font-size: 12px; color: #444; white-space: nowrap; }
+  .gloss { font-size: 14px; color: #333; display: flex; justify-content: space-between; gap: 8px; }
+  .gloss span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .badge { border: 1px solid #000; border-radius: 4px; font-size: 11px; padding: 0 4px; white-space: nowrap; }
+  .banner { margin: 8px 16px; border: 1px dashed #000; padding: 8px; font-size: 13px; }
+  .sheet { border-top: 2px solid #000; margin-top: 140px; padding: 8px 0; }
+  .sheet .grab { width: 36px; height: 4px; background: #000; border-radius: 2px; margin: 0 auto 8px; }
+  .opt { display: flex; gap: 12px; padding: 10px 16px; min-height: 48px; align-items: center; }
+  .empty { padding: 24px 16px; color: #333; }
+</style>
+</head>
+<body>
+<h1>Main: search, scope and suggestions</h1>
+<p class="note">Interactive mockup. Type in the live screen: try <b>wri</b>, <b>كتب</b> (no diacritics), <b>اكل</b> (bare alef matches أَكَلَ), or <b>ك ت ب</b> (root query). Change the scope to see the script-detection hint. Fake data, black and white on purpose.</p>
+
+<div class="screens">
+  <section>
+    <p class="cap">Live: type to see suggestions</p>
+    <div class="phone">
+      <div class="top">
+        <div class="field"><span aria-hidden="true">🔍</span>
+          <input id="q" dir="auto" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Search">
+          <button id="clear" aria-label="Clear" hidden>✕</button><span aria-hidden="true">⋮</span></div>
+        <select id="scope" class="scope" aria-label="Search in">
+          <option value="all">All installed (3) ▾</option>
+          <option value="wikt-en">Wiktionary English ▾</option>
+          <option value="wn">Open English WordNet ▾</option>
+          <option value="wikt-ar">Wiktionary Arabic–English ▾</option>
+        </select>
+      </div>
+      <div id="out"></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cap">Scope sheet (tap the chip)</p>
+    <div class="phone">
+      <div class="top"><div class="field">🔍 <span style="color:#555">Search all dictionaries</span></div></div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div style="padding:4px 16px;font-weight:700">Search in</div>
+        <div class="opt">◉ All installed (3)</div>
+        <div class="hdr">English → English</div>
+        <div class="opt">○ Wiktionary English</div>
+        <div class="opt">○ Open English WordNet 2025</div>
+        <div class="hdr">Arabic → English</div>
+        <div class="opt">○ Wiktionary Arabic–English</div>
+        <div class="opt" style="text-decoration:underline">Manage dictionaries…</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  const DATA = [
+    { hw: 'write', key: 'write', pos: 'verb', gloss: 'to form letters or words on a surface', d: 'wikt-en' },
+    { hw: 'write', key: 'write', pos: 'verb', gloss: 'produce a literary work', d: 'wn' },
+    { hw: 'writer', key: 'writer', pos: 'noun', gloss: 'a person who writes', d: 'wikt-en' },
+    { hw: 'writing', key: 'writing', pos: 'noun', gloss: 'the activity of creating text', d: 'wikt-en' },
+    { hw: 'written', key: 'written', pos: 'adj', gloss: 'past participle of write', d: 'wikt-en', infl: 'write' },
+    { hw: 'wrist', key: 'wrist', pos: 'noun', gloss: 'the joint between hand and arm', d: 'wikt-en' },
+    { hw: 'كَتَبَ', root: 'ك ت ب', pos: 'verb', gloss: 'to write', d: 'wikt-ar' },
+    { hw: 'كُتُب', root: 'ك ت ب', pos: 'noun', gloss: 'books (plural of كِتَاب)', d: 'wikt-ar' },
+    { hw: 'كُتِبَ', root: 'ك ت ب', pos: 'verb', gloss: 'was written (passive of كَتَبَ)', d: 'wikt-ar' },
+    { hw: 'كِتَاب', root: 'ك ت ب', pos: 'noun', gloss: 'book', d: 'wikt-ar' },
+    { hw: 'كَاتِب', root: 'ك ت ب', pos: 'noun', gloss: 'writer, clerk', d: 'wikt-ar' },
+    { hw: 'مَكْتَبَة', root: 'ك ت ب', pos: 'noun', gloss: 'library; bookshop', d: 'wikt-ar' },
+    { hw: 'أَكَلَ', root: 'أ ك ل', pos: 'verb', gloss: 'to eat', d: 'wikt-ar' },
+    { hw: 'إِسْلَام', root: 'س ل م', pos: 'noun', gloss: 'submission; Islam', d: 'wikt-ar' },
+  ];
+  const NAMES = { 'wikt-en': 'Wikt EN', wn: 'WordNet', 'wikt-ar': 'Wikt AR' };
+  const RECENT = [DATA[6], DATA[0], DATA[9]];
+  // Same rules as docs/CATALOG.md: strip tashkil and tatweel, unify alef, ى→ي, ة→ه.
+  const norm = s => s.toLowerCase()
+    .replace(/[ً-ٰٟـ]/g, '')
+    .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').trim();
+  DATA.forEach(e => { e.k = norm(e.key || e.hw); });
+  const isAr = s => /[؀-ۿ]/.test(s);
+  const $q = document.getElementById('q'), $out = document.getElementById('out'),
+        $scope = document.getElementById('scope'), $clear = document.getElementById('clear');
+
+  function row(e, showBadge) {
+    const ar = isAr(e.hw);
+    const meta = [e.pos, e.root].filter(Boolean).join(' · ');
+    return `<div class="row" role="button" tabindex="0">
+      <div class="l1"><span class="hw" ${ar ? 'lang="ar" dir="rtl"' : ''}>${e.hw}</span><span class="meta" dir="auto">${meta}</span></div>
+      <div class="gloss"><span>${e.infl ? `${e.hw} → <b>${e.infl}</b>` : e.gloss}</span>${showBadge ? `<span class="badge">${NAMES[e.d]}</span>` : ''}</div></div>`;
+  }
+
+  function render() {
+    const raw = $q.value, q = norm(raw), scope = $scope.value;
+    $clear.hidden = !raw;
+    $q.placeholder = scope === 'all' ? 'Search all dictionaries' : 'Search ' + $scope.selectedOptions[0].text.replace(' ▾', '');
+    if (!q) {
+      $out.innerHTML = '<div class="hdr">Recent</div>' + RECENT.map(e => row(e, true)).join('');
+      return;
+    }
+    const inScope = e => scope === 'all' || e.d === scope;
+    const rootQuery = /^[؀-ۿ]([\s-][؀-ۿ]){2,3}$/.test(raw.trim());
+    let hits;
+    if (rootQuery) {
+      const r = norm(raw).replace(/[\s-]/g, '');
+      hits = DATA.filter(e => e.root && norm(e.root).replace(/\s/g, '') === r);
+    } else {
+      hits = DATA.filter(e => e.k.startsWith(q));
+      hits.sort((a, b) => (b.k === q) - (a.k === q) || (b.hw === raw) - (a.hw === raw) || !!a.infl - !!b.infl);
+    }
+    const mine = hits.filter(inScope), other = hits.filter(e => !inScope(e));
+    let html = rootQuery ? `<div class="hdr">Words from root ${raw.trim()}</div>` : '';
+    html += mine.map(e => row(e, scope === 'all')).join('');
+    if (!mine.length && other.length) {
+      const target = NAMES[other[0].d];
+      html += `<div class="banner">${isAr(raw) ? 'Arabic word' : 'No match here'}: results from <b>${target}</b> · <u>Switch</u></div>`
+        + other.map(e => row(e, true)).join('');
+    }
+    if (!hits.length) html = `<div class="empty">No words start with “<span dir="auto">${raw}</span>”.<br><small>Check the spelling, or try another dictionary.</small></div>`;
+    $out.innerHTML = html;
+  }
+  $q.addEventListener('input', render);
+  $scope.addEventListener('change', render);
+  $clear.addEventListener('click', () => { $q.value = ''; render(); $q.focus(); });
+  render();
+</script>
+</body>
+</html>

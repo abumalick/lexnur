@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JMdict [
+<!ELEMENT JMdict (entry*)>
+<!ENTITY sK "search-only kanji form">
+<!ENTITY derog "derogatory">
+<!ENTITY sl "slang">
+<!ENTITY uk "word usually written using kana alone">
+<!ENTITY vulg "vulgar expression or word">
+<!ENTITY exp "expressions (phrases, clauses, etc.)">
+<!ENTITY int "interjection (kandoushi)">
+<!ENTITY n "noun (common) (futsuumeishi)">
+<!ENTITY v1 "Ichidan verb">
+<!ENTITY vt "transitive verb">
+]>
+<JMdict>
+<entry>
+<ent_seq>1358280</ent_seq>
+<k_ele>
+<keb>食べる</keb>
+<ke_pri>ichi1</ke_pri>
+<ke_pri>news2</ke_pri>
+<ke_pri>nf25</ke_pri>
+</k_ele>
+<k_ele>
+<keb>喰べる</keb>
+<ke_inf>&sK;</ke_inf>
+</k_ele>
+<r_ele>
+<reb>たべる</reb>
+<re_pri>ichi1</re_pri>
+<re_pri>news2</re_pri>
+<re_pri>nf25</re_pri>
+</r_ele>
+<sense>
+<pos>&v1;</pos>
+<pos>&vt;</pos>
+<gloss>to eat</gloss>
+</sense>
+<sense>
+<pos>&v1;</pos>
+<pos>&vt;</pos>
+<gloss>to live on (e.g. a salary)</gloss>
+<gloss>to live off</gloss>
+<gloss>to subsist on</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1358290</ent_seq>
+<k_ele>
+<keb>食べ過ぎ</keb>
+<ke_pri>news2</ke_pri>
+<ke_pri>nf35</ke_pri>
+</k_ele>
+<k_ele>
+<keb>食べすぎ</keb>
+</k_ele>
+<r_ele>
+<reb>たべすぎ</reb>
+<re_pri>news2</re_pri>
+<re_pri>nf35</re_pri>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<gloss>overeating</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1582710</ent_seq>
+<k_ele>
+<keb>日本</keb>
+<ke_pri>news2</ke_pri>
+<ke_pri>nf25</ke_pri>
+<ke_pri>spec1</ke_pri>
+</k_ele>
+<r_ele>
+<reb>にほん</reb>
+<re_pri>news2</re_pri>
+<re_pri>nf25</re_pri>
+<re_pri>spec1</re_pri>
+</r_ele>
+<r_ele>
+<reb>にっぽん</reb>
+<re_pri>spec1</re_pri>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<gloss>Japan</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1001280</ent_seq>
+<r_ele>
+<reb>おしゃぶり</reb>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<gloss>teething ring</gloss>
+<gloss>pacifier</gloss>
+<gloss>dummy</gloss>
+</sense>
+<sense>
+<pos>&n;</pos>
+<misc>&sl;</misc>
+<misc>&vulg;</misc>
+<gloss>blowjob</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1065480</ent_seq>
+<r_ele>
+<reb>ジャップ</reb>
+</r_ele>
+<sense>
+<pos>&n;</pos>
+<misc>&derog;</misc>
+<gloss>Jap</gloss>
+<gloss>Japanese person</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1004510</ent_seq>
+<k_ele>
+<keb>此方こそ</keb>
+<ke_inf>&sK;</ke_inf>
+</k_ele>
+<r_ele>
+<reb>こちらこそ</reb>
+</r_ele>
+<sense>
+<pos>&exp;</pos>
+<gloss>it is I who should say so</gloss>
+</sense>
+</entry>
+<entry>
+<ent_seq>1586820</ent_seq>
+<k_ele>
+<keb>有難う</keb>
+</k_ele>
+<k_ele>
+<keb>有り難う</keb>
+</k_ele>
+<k_ele>
+<keb>有りがとう</keb>
+<ke_inf>&sK;</ke_inf>
+</k_ele>
+<r_ele>
+<reb>ありがとう</reb>
+<re_pri>ichi1</re_pri>
+</r_ele>
+<sense>
+<pos>&int;</pos>
+<misc>&uk;</misc>
+<gloss>thank you</gloss>
+<gloss>thanks</gloss>
+</sense>
+</entry>
+</JMdict>

@@ -1,0 +1,8 @@
+report.xml
+README.md
+test_output/
+.env
+AuthKey_*.p8
+.api_key.json
+play-store-credentials.json
+metadata/ios/review_information/

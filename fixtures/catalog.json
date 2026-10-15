@@ -1,0 +1,82 @@
+{
+  "format": 2,
+  "generated_at": "2026-01-01T00:00:00Z",
+  "dictionaries": [
+    {
+      "id": "wiktionary-ar-en",
+      "title": "Wiktionary Arabic–English",
+      "from": "ar",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "source_date": "2026-10-10",
+      "summary": {
+        "en": "Vowelled Arabic words with roots and verb tables, explained in English.",
+        "ar": "كلمات عربية مشكولة مع جذورها وجداول تصريف الأفعال، بشرح إنجليزي."
+      },
+      "ai_generated": false,
+      "schema_version": 1,
+      "version": "fixture",
+      "entry_count": 133,
+      "size_bytes": 65790,
+      "installed_size_bytes": 843776,
+      "sha256": "1d6a2bd876acbe951b5adc1645299afc189e5144c257a852b1b6e03cba1dd807",
+      "url": "packages/wiktionary-ar-en.sqlite.zst"
+    },
+    {
+      "id": "wiktionary-en",
+      "title": "Wiktionary English",
+      "from": "en",
+      "to": "en",
+      "kind": "monolingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "source_date": "2026-10-10",
+      "summary": {
+        "en": "Large English dictionary: definitions, examples, pronunciation and word forms.",
+        "ar": "قاموس إنجليزي كبير: تعريفات وأمثلة ونطق وصيغ الكلمات."
+      },
+      "ai_generated": false,
+      "schema_version": 2,
+      "version": "fixture",
+      "entry_count": 104,
+      "size_bytes": 79646,
+      "installed_size_bytes": 212992,
+      "sha256": "2d14427626f3e052499cc40b7800eeab4a4b7a09c0b927702581d808a9a99517",
+      "url": "packages/wiktionary-en.sqlite.zst",
+      "min_app_version": "1.1.0"
+    },
+    {
+      "id": "oewn-2025",
+      "title": "Open English WordNet 2025",
+      "from": "en",
+      "to": "en",
+      "kind": "monolingual",
+      "rank": 2,
+      "difficulty": "intermediate",
+      "license": "CC BY 4.0 + WordNet License",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Open English WordNet 2025 (https://en-word.net) by the Open English WordNet community, licensed under CC BY 4.0. Derived from Princeton WordNet 3.0: WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved. Converted to a dictionary package by Lexnur.",
+      "source_date": "2026-10-10",
+      "summary": {
+        "en": "Short definitions and synonyms. Smaller, quicker to download.",
+        "ar": "تعريفات قصيرة ومرادفات. حجمه أصغر وتنزيله أسرع."
+      },
+      "ai_generated": false,
+      "schema_version": 1,
+      "version": "fixture",
+      "entry_count": 139,
+      "size_bytes": 40020,
+      "installed_size_bytes": 184320,
+      "sha256": "de93ec69d1405e1d8339bab405ad29a306329cdf2113a379dea5181c5071f0f4",
+      "url": "packages/oewn-2025.sqlite.zst"
+    }
+  ]
+}

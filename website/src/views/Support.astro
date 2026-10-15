@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+import { type Lang, EMAIL } from "../i18n";
+
+const { lang } = Astro.props as { lang: Lang };
+---
+
+{lang === "en" ? (
+  <Base lang="en" page="support" title="Support — Lexnur" description="Get help with Lexnur or report a problem.">
+    <h1>Support</h1>
+    <p class="lead">
+      Questions, bug reports, a mistake in a dictionary, or a dictionary you would like to see? Email us at
+      <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+    </p>
+    <p>To help us fix a problem quickly, please include:</p>
+    <ul>
+      <li>your device and its Android or iOS version;</li>
+      <li>the Lexnur version;</li>
+      <li>the dictionary and the word involved, if any.</li>
+    </ul>
+
+    <h2>Common questions</h2>
+    <h3>Does Lexnur need an internet connection?</h3>
+    <p>Only to download the list of dictionaries and the dictionaries you choose. After that, everything works offline.</p>
+    <h3>Is it free?</h3>
+    <p>Yes. Lexnur is free and has no ads.</p>
+    <h3>Do I need an account?</h3>
+    <p>No. Lexnur has no accounts and collects no personal data — see the <a href="/privacy">privacy policy</a>.</p>
+  </Base>
+) : (
+  <Base lang="ar" page="support" title="الدعم — Lexnur" description="احصل على المساعدة في Lexnur أو أبلغ عن مشكلة.">
+    <h1>الدعم</h1>
+    <p class="lead">
+      لديك سؤال، أو وجدت خللًا أو خطأً في أحد القواميس، أو تودّ إضافة قاموس؟ راسلنا على
+      <a href={`mailto:${EMAIL}`} dir="ltr">{EMAIL}</a>.
+    </p>
+    <p>لنساعدك بسرعة، يُرجى ذكر:</p>
+    <ul>
+      <li>نوع جهازك وإصدار أندرويد أو iOS؛</li>
+      <li>إصدار Lexnur؛</li>
+      <li>القاموس والكلمة المعنيَّين، إن وُجدا.</li>
+    </ul>
+
+    <h2>أسئلة شائعة</h2>
+    <h3>هل يحتاج Lexnur إلى اتصال بالإنترنت؟</h3>
+    <p>فقط لتنزيل قائمة القواميس والقواميس التي تختارها، وبعد ذلك يعمل كل شيء دون اتصال.</p>
+    <h3>هل هو مجاني؟</h3>
+    <p>نعم، Lexnur مجاني وبلا إعلانات.</p>
+    <h3>هل أحتاج إلى حساب؟</h3>
+    <p>لا. لا توجد حسابات في Lexnur ولا يجمع أي بيانات شخصية — راجع <a href="/ar/privacy">سياسة الخصوصية</a>.</p>
+  </Base>
+)}

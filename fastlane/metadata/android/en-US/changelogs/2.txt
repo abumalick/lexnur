@@ -1,0 +1,4 @@
+Lexnur 1.1.0: free offline dictionaries for English, Arabic, French, Japanese and Chinese.
+• New: Japanese–English (JMdict) and Chinese–English (CC-CEDICT), plus English–Japanese and English–Chinese from Wiktionary
+• Installed dictionaries take about half the space
+• Search and display improvements

@@ -1,0 +1,1 @@
+arabic,english,french,japanese,chinese,thesaurus,translate,français,日本語,中文,辞書,词典

@@ -1,0 +1,37 @@
+ext {
+    junitVersion = project.hasProperty('junitVersion') ? rootProject.ext.junitVersion : '4.13.2'
+}
+
+buildscript {
+    repositories { google(); mavenCentral() }
+    dependencies { classpath 'com.android.tools.build:gradle:8.13.0' }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    namespace = "com.lexnur.nativeplugin"
+    compileSdk = project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
+    defaultConfig {
+        minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 24
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 36
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+    testOptions { unitTests.returnDefaultValues = true }
+    lintOptions { abortOnError = false }
+}
+
+repositories { google(); mavenCentral() }
+
+dependencies {
+    implementation project(':capacitor-android')
+    implementation 'androidx.work:work-runtime:2.12.0'
+    implementation 'com.github.luben:zstd-jni:1.5.7-12@aar'
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
+    testImplementation 'com.github.luben:zstd-jni:1.5.7-12'
+    testImplementation 'org.json:json:20260814'
+}

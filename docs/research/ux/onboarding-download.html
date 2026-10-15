@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onboarding and downloads</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; line-height: 1.45; background: #fff; color: #000; }
+  h1 { font-size: 18px; } .note { font-size: 13px; color: #555; max-width: 70ch; }
+  .screens { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .phone { width: 360px; max-width: 100%; border: 2px solid #000; border-radius: 16px; overflow: hidden; }
+  .cap { font-size: 12px; font-weight: 600; margin: 0 0 6px; }
+  .bar { padding: 12px 16px; border-bottom: 1px solid #000; font-weight: 600; }
+  .pad { padding: 12px 16px; }
+  .group { padding: 8px 16px 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; border-top: 1px solid #ccc; }
+  .row { display: flex; gap: 12px; padding: 10px 16px; align-items: flex-start; min-height: 56px; }
+  .row input { margin-top: 4px; width: 20px; height: 20px; }
+  .row .main { flex: 1; } .title { font-weight: 600; } .sec { font-size: 13px; color: #444; }
+  .chip { display: inline-block; border: 1px solid #000; border-radius: 4px; padding: 0 5px; font-size: 11px; }
+  .info { border: 1px solid #000; border-radius: 50%; width: 24px; height: 24px; text-align: center; font-size: 13px; flex: none; }
+  .footer { border-top: 1px solid #000; padding: 12px 16px; font-size: 13px; }
+  .warn { font-weight: 600; }
+  .btns { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+  button { font: inherit; min-height: 44px; padding: 0 16px; border: 2px solid #000; background: #fff; border-radius: 22px; }
+  button.primary { background: #000; color: #fff; }
+  button.text { border-color: transparent; text-decoration: underline; }
+  button:disabled { opacity: .4; }
+  .prog { height: 6px; border: 1px solid #000; margin-top: 6px; } .prog > i { display: block; height: 100%; background: #000; }
+  .prog.indet > i { width: 30%; animation: slide 1.2s infinite linear; }
+  @keyframes slide { from { margin-left: 0 } to { margin-left: 70% } }
+  @media (prefers-reduced-motion: reduce) { .prog.indet > i { animation: none; } }
+  .search { margin: 12px 16px; border: 1px solid #000; border-radius: 24px; padding: 10px 14px; color: #555; }
+  .strip { margin: 0 16px; border: 1px solid #000; padding: 8px 10px; font-size: 13px; }
+  .dialog { margin: 40px 16px; border: 2px solid #000; border-radius: 12px; padding: 16px; }
+</style>
+</head>
+<body>
+<h1>Onboarding = Library in first-run mode</h1>
+<p class="note">Black-and-white structure mockup. Sizes are placeholders (~NN MB); real values come from the published catalog. Tick and untick rows to see the footer total and the button update.</p>
+
+<div class="screens">
+  <section>
+    <p class="cap">1 · First run: pick dictionaries</p>
+    <div class="phone">
+      <div class="pad">
+        <div style="font-size:20px;font-weight:700">Free offline dictionaries</div>
+        <div class="sec">Download once, search without internet. No ads, no account.</div>
+      </div>
+      <div class="group">English → English</div>
+      <label class="row"><input type="checkbox" data-mb="300" data-inst="900" checked>
+        <span class="main"><span class="title">Wiktionary English</span><br>
+        <span class="sec"><span class="chip">beginner</span> · ~300 MB · Recommended</span></span>
+        <span class="info" title="Details">i</span></label>
+      <label class="row"><input type="checkbox" data-mb="30" data-inst="90">
+        <span class="main"><span class="title">Open English WordNet 2025</span><br>
+        <span class="sec"><span class="chip">intermediate</span> · ~30 MB</span><br>
+        <span class="sec">Smaller, quicker. Short definitions and synonyms.</span></span>
+        <span class="info">i</span></label>
+      <div class="group">Arabic → English</div>
+      <label class="row"><input type="checkbox" data-mb="40" data-inst="120" checked>
+        <span class="main"><span class="title">Wiktionary Arabic–English</span><br>
+        <span class="sec"><span class="chip">beginner</span> · ~40 MB · Recommended</span><br>
+        <span class="sec">Vowelled words, roots and verb tables.</span></span>
+        <span class="info">i</span></label>
+      <div class="footer">
+        <div id="total"></div>
+        <div class="btns"><button class="primary" id="dl"></button><button class="text">Skip for now</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cap">2 · On mobile data, above the threshold</p>
+    <div class="phone" style="min-height:420px">
+      <div class="dialog">
+        <div style="font-weight:700;margin-bottom:8px">Use mobile data?</div>
+        <div>This download is about <b>340 MB</b>. You're not on Wi-Fi.</div>
+        <div class="btns" style="justify-content:flex-end"><button class="text">Wait for Wi-Fi</button><button class="primary">Download now</button></div>
+        <div class="sec" style="margin-top:8px">You can change this in Settings › Downloads.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cap">3 · Continue: Main while downloads run</p>
+    <div class="phone" style="min-height:420px">
+      <div class="search">🔍 Search Wiktionary Arabic–English</div>
+      <div class="strip">Downloading 1 of 2 · Wiktionary English 42%
+        <div class="prog"><i style="width:42%"></i></div></div>
+      <div class="pad sec">Small dictionaries are downloaded first, so search works right away. Tap the strip to open Library.</div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cap">4 · Library: every download phase</p>
+    <div class="phone">
+      <div class="bar">← Dictionaries</div>
+      <div class="group">Installed</div>
+      <div class="row"><span class="main"><span class="title">Wiktionary Arabic–English</span><br><span class="sec">Ready ✓ · 120 MB on device · v2026-10-01</span></span><span>⋮</span></div>
+      <div class="group">Downloading</div>
+      <div class="row"><span class="main"><span class="title">Wiktionary English</span><br>
+        <span class="sec">Downloading 42% · 126 / 300 MB · about 2 min left</span>
+        <div class="prog"><i style="width:42%"></i></div></span><span>❚❚ ✕</span></div>
+      <div class="row"><span class="main"><span class="title">Open English WordNet 2025</span><br>
+        <span class="sec">Verifying…</span><div class="prog indet"><i></i></div></span></div>
+      <div class="row"><span class="main"><span class="title">(example) Paused</span><br><span class="sec">Paused · waiting for connection</span>
+        <div class="prog"><i style="width:63%"></i></div></span><span>▶</span></div>
+      <div class="row"><span class="main"><span class="title">(example) Wi-Fi only</span><br><span class="sec">Waiting for Wi-Fi · ~300 MB</span></span><button class="text">Download now</button></div>
+      <div class="group">Available</div>
+      <div class="row"><span class="main"><span class="title">Salmoné Arabic–English (1889)</span><br><span class="sec"><span class="chip">intermediate</span> · ~NN MB</span></span><button>Get</button></div>
+      <div class="footer">Dictionaries use 120 MB · 21 GB free</div>
+    </div>
+  </section>
+</div>
+
+<script>
+  const boxes = [...document.querySelectorAll('input[type=checkbox]')];
+  const total = document.getElementById('total'), dl = document.getElementById('dl');
+  function update() {
+    const on = boxes.filter(b => b.checked);
+    const mb = on.reduce((s, b) => s + +b.dataset.mb, 0);
+    const inst = on.reduce((s, b) => s + +b.dataset.inst, 0);
+    total.innerHTML = on.length
+      ? `Download ~${mb} MB · needs ~${(inst / 1000).toFixed(1)} GB free · <b>you have 21 GB free</b>`
+      : 'Nothing selected. You can add dictionaries later from Settings.';
+    dl.textContent = on.length ? `Download (${on.length})` : 'Download';
+    dl.disabled = !on.length;
+  }
+  boxes.forEach(b => b.addEventListener('change', update));
+  update();
+</script>
+</body>
+</html>

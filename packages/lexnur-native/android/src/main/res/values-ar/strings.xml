@@ -1,0 +1,5 @@
+<resources>
+    <string name="lexnur_download_channel">تنزيل القواميس</string>
+    <string name="lexnur_download_title">جارٍ تنزيل قاموس</string>
+    <string name="lexnur_download_installing">جارٍ التثبيت…</string>
+</resources>

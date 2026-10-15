@@ -1,0 +1,5 @@
+<resources>
+    <string name="lexnur_download_channel">Dictionary downloads</string>
+    <string name="lexnur_download_title">Downloading a dictionary</string>
+    <string name="lexnur_download_installing">Installing…</string>
+</resources>

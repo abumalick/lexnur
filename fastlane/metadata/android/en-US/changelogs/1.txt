@@ -1,0 +1,1 @@
+First release of Lexnur: free offline dictionaries for English and Arabic.

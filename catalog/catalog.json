@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "levels": {
+    "difficulty": [
+      "beginner",
+      "intermediate",
+      "advanced",
+      "expert"
+    ],
+    "distribution": {
+      "open": "Permissive or CC BY / CC BY-SA. Can be packaged and offered for download."
+    }
+  },
+  "dictionaries": [
+    {
+      "id": "wiktionary-en",
+      "title": "Wiktionary English",
+      "from": "en",
+      "to": "en",
+      "kind": "monolingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "Large English dictionary: definitions, examples, pronunciation and word forms.",
+        "ar": "قاموس إنجليزي كبير: تعريفات وأمثلة ونطق وصيغ الكلمات."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'en'"
+    },
+    {
+      "id": "oewn-2025",
+      "title": "Open English WordNet 2025",
+      "from": "en",
+      "to": "en",
+      "kind": "monolingual",
+      "rank": 2,
+      "difficulty": "intermediate",
+      "distribution": "open",
+      "license": "CC BY 4.0 + WordNet License",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Open English WordNet 2025 (https://en-word.net) by the Open English WordNet community, licensed under CC BY 4.0. Derived from Princeton WordNet 3.0: WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "Short definitions and synonyms. Smaller, quicker to download.",
+        "ar": "تعريفات قصيرة ومرادفات. حجمه أصغر وتنزيله أسرع."
+      },
+      "sources": [
+        "oewn"
+      ],
+      "notes": "Short definitions, synonyms and relations. Also serves as the English thesaurus."
+    },
+    {
+      "id": "wiktionary-ar-en",
+      "title": "Wiktionary Arabic–English",
+      "from": "ar",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "Vowelled Arabic words with roots and verb tables, explained in English.",
+        "ar": "كلمات عربية مشكولة مع جذورها وجداول تصريف الأفعال، بشرح إنجليزي."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'ar'",
+      "notes": "~36k vowelled headwords, with roots and inflection tables."
+    },
+    {
+      "id": "salmone-1889",
+      "title": "Salmoné Arabic–English Dictionary (1889)",
+      "from": "ar",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 2,
+      "difficulty": "intermediate",
+      "distribution": "open",
+      "license": "CC BY-SA 3.0 US + offer modifications to Perseus",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+      "attribution": "H. Anthony Salmoné, An Advanced Learner's Arabic-English Dictionary (1889). Text provided by Perseus Digital Library, Tufts University (https://www.perseus.tufts.edu), with funding from The National Science Foundation, licensed under CC BY-SA 3.0 US. Modified by Lexnur: transliteration converted to Arabic script, entries restructured, and dated racial terms in the English glosses reworded to modern terms.",
+      "summary": {
+        "en": "Classic Arabic–English dictionary from 1889: vowelled words grouped by root, with short meanings.",
+        "ar": "قاموس عربي إنجليزي كلاسيكي من عام ١٨٨٩: كلمات مشكولة مرتبة حسب الجذر، بمعانٍ موجزة."
+      },
+      "sources": [
+        "perseus-arabic"
+      ],
+      "path": "Arabic/Salmone/opensource/salmone.xml"
+    },
+    {
+      "id": "lane-lexicon",
+      "title": "Lane's Arabic–English Lexicon",
+      "from": "ar",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 3,
+      "difficulty": "expert",
+      "distribution": "open",
+      "license": "CC BY-SA 3.0 US + offer modifications to Perseus",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/us/",
+      "attribution": "Edward William Lane, An Arabic-English Lexicon (1863–1893). Text provided by Perseus Digital Library, with funding from The U.S. Department of Education and The Max Planck Society. Digitized by the Perseus Digital Library, Tufts University (https://www.perseus.tufts.edu), licensed under CC BY-SA 3.0 US. Modified by Lexnur: transliteration converted to Arabic script, entries restructured, and dated racial terms in the English glosses reworded to modern terms.",
+      "availability": "This text may be freely distributed, subject to the following restrictions: You credit Perseus, as follows, whenever you use the document: “Text provided by Perseus Digital Library, with funding from The U.S. Department of Education and The Max Planck Society.” You leave this availability statement intact. You offer Perseus any modifications you make.",
+      "summary": {
+        "en": "The great classical Arabic–English lexicon: detailed meanings with citations from Arabic sources. For advanced readers.",
+        "ar": "المعجم العربي الإنجليزي الكلاسيكي الكبير: معانٍ مفصلة مع شواهد من المصادر العربية. للقراء المتقدمين."
+      },
+      "sources": [
+        "perseus-arabic"
+      ],
+      "path": "Arabic/Lane/opensource/",
+      "notes": "Arabic is in Buckwalter-style transliteration; convert to Arabic script at build time."
+    },
+    {
+      "id": "wiktionary-en-ar",
+      "title": "Wiktionary English–Arabic",
+      "from": "en",
+      "to": "ar",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "English words with their Arabic translations, grouped by meaning.",
+        "ar": "كلمات إنجليزية مع ترجماتها العربية، مرتبة حسب المعنى."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'en', translations[].code == 'ar'"
+    },
+    {
+      "id": "awn4-en-ar",
+      "title": "Arabic WordNet v4 (English–Arabic)",
+      "from": "en",
+      "to": "ar",
+      "kind": "bilingual",
+      "rank": 2,
+      "difficulty": "intermediate",
+      "distribution": "open",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Arabic WordNet 4 by Salah Abdo (https://github.com/Salah-Sal/arabic-wordnet-v4), licensed under CC BY 4.0; its Arabic translations were generated with AI assistance. English definitions from Open English WordNet 2025 (https://en-word.net) by the Open English WordNet community, licensed under CC BY 4.0. Derived from Princeton WordNet 3.0: WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "English words with Arabic equivalents for each meaning. The translations are AI-generated.",
+        "ar": "كلمات إنجليزية مع مقابلاتها العربية لكل معنى. الترجمات مولّدة بالذكاء الاصطناعي."
+      },
+      "sources": [
+        "arabic-wordnet-v4"
+      ],
+      "ai_generated": true,
+      "notes": "Machine translation of Open English WordNet; no human validation stated. Label as AI-generated in the UI."
+    },
+    {
+      "id": "wiktionary-fr-ar",
+      "title": "Wiktionnaire arabe–français",
+      "from": "ar",
+      "to": "fr",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://fr.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "Arabic words explained in French, from the French Wiktionary.",
+        "ar": "كلمات عربية مشروحة بالفرنسية، من ويكاموس الفرنسي."
+      },
+      "sources": [
+        "kaikki-frwiktionary"
+      ],
+      "filter": "lang_code == 'ar'"
+    },
+    {
+      "id": "jmdict-en",
+      "title": "JMdict Japanese–English",
+      "from": "ja",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "min_app_version": "1.1.0",
+      "license": "CC BY-SA 4.0 (EDRDG conditions)",
+      "license_url": "https://www.edrdg.org/edrdg/licence.html",
+      "attribution": "This package uses the JMdict dictionary files. These files are the property of the Electronic Dictionary Research and Development Group, and are used in conformance with the Group's licence. JMdict (https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project), CC BY-SA 4.0. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "Japanese words in kanji and kana with their English meanings.",
+        "ar": "كلمات يابانية بالكانجي والكانا مع معانيها بالإنجليزية."
+      },
+      "sources": [
+        "jmdict"
+      ]
+    },
+    {
+      "id": "cc-cedict",
+      "title": "CC-CEDICT Chinese–English",
+      "from": "zh",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "min_app_version": "1.1.0",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "CC-CEDICT (https://www.mdbg.net/chinese/dictionary?page=cc-cedict) by MDBG and the CC-CEDICT contributors, licensed under CC BY-SA 4.0. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "Chinese words in simplified and traditional characters, with pinyin and English meanings.",
+        "ar": "كلمات صينية بالحروف المبسطة والتقليدية، مع نطقها بالبينيين ومعانيها بالإنجليزية."
+      },
+      "sources": [
+        "cc-cedict"
+      ]
+    },
+    {
+      "id": "wiktionnaire-fr",
+      "title": "Wiktionnaire français",
+      "from": "fr",
+      "to": "fr",
+      "kind": "monolingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://fr.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "French dictionary from the French Wiktionary: definitions, examples, pronunciation and word forms.",
+        "ar": "قاموس فرنسي من ويكاموس الفرنسي: تعريفات وأمثلة ونطق وصيغ الكلمات."
+      },
+      "sources": [
+        "kaikki-frwiktionary"
+      ],
+      "filter": "lang_code == 'fr'"
+    },
+    {
+      "id": "wiktionary-fr-en",
+      "title": "Wiktionary French–English",
+      "from": "fr",
+      "to": "en",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "French words explained in English, from the English Wiktionary.",
+        "ar": "كلمات فرنسية مشروحة بالإنجليزية، من ويكاموس الإنجليزي."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'fr'"
+    },
+    {
+      "id": "wiktionary-en-fr",
+      "title": "Wiktionary English–French",
+      "from": "en",
+      "to": "fr",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "English words with their French translations, grouped by meaning.",
+        "ar": "كلمات إنجليزية مع ترجماتها الفرنسية، مرتبة حسب المعنى."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'en', translations[].code == 'fr'"
+    },
+    {
+      "id": "wiktionnaire-fr-ar",
+      "title": "Wiktionnaire français–arabe",
+      "from": "fr",
+      "to": "ar",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://fr.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "French words with their Arabic translations, from the French Wiktionary.",
+        "ar": "كلمات فرنسية مع ترجماتها العربية، من ويكاموس الفرنسي."
+      },
+      "sources": [
+        "kaikki-frwiktionary"
+      ],
+      "filter": "lang_code == 'fr', translations[].code == 'ar'"
+    },
+    {
+      "id": "wiktionary-en-ja",
+      "title": "Wiktionary English–Japanese",
+      "from": "en",
+      "to": "ja",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "English words with their Japanese translations, grouped by meaning.",
+        "ar": "كلمات إنجليزية مع ترجماتها اليابانية، مرتبة حسب المعنى."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'en', translations[].code == 'ja'",
+      "min_app_version": "1.1.0"
+    },
+    {
+      "id": "wiktionary-en-zh",
+      "title": "Wiktionary English–Chinese",
+      "from": "en",
+      "to": "zh",
+      "kind": "bilingual",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "From Wiktionary (https://en.wiktionary.org), extracted by Wiktextract/Kaikki.org (T. Ylonen, LREC 2022). CC BY-SA 4.0 and GFDL. Converted to a dictionary package by Lexnur.",
+      "summary": {
+        "en": "English words with their Chinese translations, grouped by meaning.",
+        "ar": "كلمات إنجليزية مع ترجماتها الصينية، مرتبة حسب المعنى."
+      },
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "filter": "lang_code == 'en', translations[].code in ('zh','cmn')",
+      "min_app_version": "1.1.0"
+    }
+  ],
+  "generated_families": [
+    {
+      "id_pattern": "wiktionary-{lang}-en",
+      "from": "{any lang in enwiktionary}",
+      "to": "en",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "notes": "One package per lang_code. Publish only languages above a minimum entry count (e.g. 5,000)."
+    },
+    {
+      "id_pattern": "wiktionary-en-{lang}",
+      "from": "en",
+      "to": "{lang}",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "sources": [
+        "kaikki-enwiktionary"
+      ],
+      "notes": "From translations[] of English entries."
+    },
+    {
+      "id_pattern": "wiktionary-{ed}",
+      "from": "{ed}",
+      "to": "{ed}",
+      "rank": 1,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0 / GFDL",
+      "sources": [
+        "kaikki-{ed}wiktionary"
+      ],
+      "editions": [
+        "fr",
+        "de",
+        "es",
+        "ru",
+        "it",
+        "pt",
+        "nl",
+        "pl",
+        "zh",
+        "ja",
+        "ko",
+        "tr"
+      ],
+      "notes": "Monolingual dictionary of each Wiktionary edition (entries where lang_code == edition)."
+    },
+    {
+      "id_pattern": "wikdict-{from}-{to}",
+      "from": "{26 wikdict langs}",
+      "to": "{26 wikdict langs}",
+      "rank": 2,
+      "difficulty": "beginner",
+      "distribution": "open",
+      "license": "CC BY-SA 4.0",
+      "sources": [
+        "wikdict"
+      ],
+      "notes": "Ranks below wiktionary-* for pairs involving English; rank 1 for pairs without English. No Arabic."
+    }
+  ],
+  "supplements": [
+    {
+      "id": "tatoeba",
+      "role": "example sentences",
+      "license": "CC BY 2.0 FR (part CC0)",
+      "sources": [
+        "tatoeba"
+      ]
+    },
+    {
+      "id": "wikidata-lexemes",
+      "role": "inflected forms for search / lemmatisation",
+      "license": "CC0",
+      "sources": [
+        "wikidata-lexemes"
+      ]
+    },
+    {
+      "id": "omw-2.0",
+      "role": "synonyms across languages, linked to WordNet synsets",
+      "license": "per wordnet (Arabic: CC BY-SA 3.0)",
+      "sources": [
+        "omw"
+      ]
+    }
+  ]
+}

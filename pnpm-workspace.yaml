@@ -1,0 +1,9 @@
+packages:
+  - "packages/*"
+  - "pipeline"
+  - "app"
+  - "scripts/screenshots"
+allowBuilds:
+  esbuild: false
+patchedDependencies:
+  '@capacitor-community/sqlite@8.1.1': patches/@capacitor-community__sqlite@8.1.1.patch

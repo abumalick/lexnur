@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI.2><text><body>
+            <div2 n="kmH" type="root" org="uniform" sample="complete" part="N" TEIform="div2">
+               <head TEIform="head">
+                  <foreign lang="ar" TEIform="foreign">kmH</foreign>
+               </head>    
+               <entryFree id="n37224" key="kamaHa Ald~aAb~apa" type="main">     
+                  <form>       
+                     <itype>1</itype>        
+                     <orth orig="" extent="full" lang="ar">kamaHa Ald~aAb~apa</orth>
+                     <orth extent="full" lang="ar">*</orth>
+                  </form>, [aor.      
+    <form n="infl">       
+                     <orth orig="Ba" lang="ar">kamaHa</orth>
+                  </form>,] (inf. n. <foreign lang="ar" TEIform="foreign">kamoHN</foreign>; M) and ↓ 
+      <orth type="arrow" lang="ar">A^akomaHahaA</orth>; <hi rend="ital" TEIform="hi">i. q.</hi> 
+                  <foreign lang="ar" TEIform="foreign">kabaHahaA</foreign> (A 'Obeyd, K) and <foreign lang="ar" TEIform="foreign">A^akobaHahaA</foreign>: (A 'Obeyd:) or <foreign lang="ar" TEIform="foreign">kamaHa Ald~aAb~apa biAlil~jaAmi</foreign> signifies <hi rend="ital" TEIform="hi">He pulled in the horse,</hi> or <hi rend="ital" TEIform="hi">the like, by the bridle and bit, in order that it might stop, and not run:</hi> (M:) and ↓ 
+      <orth type="arrow" lang="ar">AkmHhA</orth>, <hi rend="ital" TEIform="hi">he pulled its bridle so that its head became upright,</hi> or <hi rend="ital" TEIform="hi">erect.</hi> (As, S, M.)    </entryFree> 
+               <entryFree>     
+                  <form>       
+                     <itype>4</itype>        
+                     <orth lang="ar">A^akomaHa</orth>
+                  </form> See 1.       -A2-  <foreign lang="ar" TEIform="foreign">AkmH Alkaromu</foreign> 
+                  <hi rend="ital" TEIform="hi">The grape-vine became in a state of commotion preparatory to its putting forth its leaves.</hi> (S, K.) ―         -b2-  <foreign lang="ar" TEIform="foreign">AkmHt Alz~amaEapu</foreign> 
+                  <hi rend="ital" TEIform="hi">The gem,</hi> or <hi rend="ital" TEIform="hi">knot, in the place whence a bunch of grapes was about to grow forth became white, and what resembled cotton came forth upon it.</hi> (Az, on the authority of Et-Táïfee.) ―         -b3-  See also <foreign lang="ar" TEIform="foreign">Akmx</foreign> and <foreign lang="ar" TEIform="foreign">A^uqomiHa</foreign>.    </entryFree> 
+               <entryFree id="n37225" key="kawomaHN" type="main">     
+                  <form>       
+                     <orth orig="" extent="full" lang="ar">kawomaHN</orth>
+                     <orth extent="full" lang="ar">*</orth>
+                  </form> (and <foreign lang="ar" TEIform="foreign">kuwmaHN</foreign>, L) A man (S) <hi rend="ital" TEIform="hi">having large buttocks.</hi> (S, L, K.) ―         -b2-  Also <foreign lang="ar" TEIform="foreign">kawomaHN</foreign>, A man (TA) <hi rend="ital" TEIform="hi">whose teeth fill his mouth so that his speech is thick:</hi> (K:) or a man <hi rend="ital" TEIform="hi">whose teeth are crowded together, one upon another, so that his mouth seems to be straitened by them.</hi> (IDrd.) ―         -b3-  <foreign lang="ar" TEIform="foreign">famN kwmH</foreign> A mouth <hi rend="ital" TEIform="hi">straitened by the great number of the teeth and by the swelling of the gums.</hi> (IDrd.)   </entryFree> 
+            </div2> 
+</body></text></TEI.2>

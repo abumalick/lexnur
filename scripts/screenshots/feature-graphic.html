@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'Naskh'; src: url('node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-700-normal.woff2') format('woff2'); font-weight: 700; }
+  @font-face { font-family: 'Serif'; src: url('node_modules/@fontsource/noto-serif/files/noto-serif-latin-700-normal.woff2') format('woff2'); font-weight: 700; }
+  html, body { margin: 0; width: 1024px; height: 500px; }
+  body { background: #0F5E63; color: #fff; display: flex; align-items: center; gap: 48px; padding: 0 72px; box-sizing: border-box; font-family: 'Serif', serif; }
+  svg { width: 220px; height: 220px; flex: none; }
+  h1 { font-size: 84px; margin: 0 0 12px; }
+  p { font-size: 34px; margin: 0; opacity: .92; }
+  [lang=ar] p { font-family: 'Naskh', serif; font-size: 38px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <svg viewBox="0 0 1024 1024"><path d="M340 236h124v432h260v120H340z" fill="#fff"/><circle cx="684" cy="330" r="72" fill="#F2C14E"/></svg>
+  <div><h1>Lexnur</h1><p id="tag"></p></div>
+<script>
+  const lang = new URLSearchParams(location.search).get('lang') || 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('tag').textContent = lang === 'ar'
+    ? 'قواميس مجانية تعمل دون إنترنت'
+    : 'Free offline dictionaries';
+</script>
+</body>
+</html>

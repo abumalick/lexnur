@@ -1,0 +1,13 @@
+{
+  "rules": [
+    {
+      "allowed": {
+        "origins": ["https://localhost", "capacitor://localhost", "http://localhost", "https://lexnur.com"],
+        "methods": ["GET", "HEAD"],
+        "headers": ["*"]
+      },
+      "exposeHeaders": ["Content-Length", "Content-Range", "ETag"],
+      "maxAgeSeconds": 3600
+    }
+  ]
+}

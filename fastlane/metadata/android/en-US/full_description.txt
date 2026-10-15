@@ -1,0 +1,26 @@
+Lexnur gives you real dictionaries that work without internet.
+
+Pick the dictionaries you want, download them once, and look up words anywhere: on a plane, underground or on a tight data plan. Suggestions appear as you type.
+
+• Free, with no ads, no account and no tracking
+• Works fully offline once a dictionary is downloaded
+• 16 dictionaries for English, Arabic, French, Japanese and Chinese
+• English: Wiktionary English and Open English WordNet
+• Arabic: Lane's Arabic–English Lexicon, Salmoné's Arabic–English Dictionary, Wiktionary Arabic–English and English–Arabic, and Arabic WordNet, with vowelled headwords and roots
+• French: Wiktionnaire, French–English, French–Arabic and Arabic–French
+• Japanese and Chinese: JMdict, CC-CEDICT, and English–Japanese and English–Chinese from Wiktionary
+• Arabic search that ignores diacritics, tatweel and alef variants: type كتب and find كَتَبَ and كِتَاب
+• Search one dictionary or all of them at once
+• Tap a root to see the words built from it
+• Light and dark themes, an English or Arabic interface, and support for large text
+
+Dictionaries are downloaded only when you choose them. The app shows their size first and asks before a large download uses mobile data.
+
+Sources and credit
+• Wiktionary and Wiktionnaire dictionaries: content from Wiktionary, extracted by Kaikki.org (Wiktextract), licensed under CC BY-SA 4.0 and the GNU Free Documentation License (GFDL).
+• Open English WordNet 2025, licensed under CC BY 4.0. It is based on Princeton WordNet 3.0, © Princeton University, used under the WordNet License.
+• Lane's Arabic–English Lexicon and Salmoné's Arabic–English Dictionary: text provided by the Perseus Digital Library, Tufts University, licensed under CC BY-SA 3.0 US. Lexnur converted the transliteration to Arabic script and restructured the entries.
+• Arabic WordNet 4 by Salah Abdo, licensed under CC BY 4.0. Its Arabic translations were generated with AI assistance.
+• JMdict: the property of the Electronic Dictionary Research and Development Group, used in conformance with the Group's licence (CC BY-SA 4.0).
+• CC-CEDICT by MDBG and the CC-CEDICT contributors, licensed under CC BY-SA 4.0.
+Senses marked as vulgar, offensive or derogatory, and sexual terms, are left out of every dictionary. Every entry shows its source and licence.

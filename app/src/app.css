@@ -1,0 +1,14 @@
+@import './lib/theme/tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #app { margin: 0; height: 100%; }
+body {
+  font-family: var(--font-ui); font-size: 1rem; line-height: 1.45;
+  background: var(--md-surface); color: var(--md-on-surface);
+  -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+button, input { font: inherit; color: inherit; }
+button { -webkit-touch-callout: none; user-select: none; }
+:focus-visible:not([tabindex="-1"]) { outline: 2px solid var(--md-primary) !important; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }

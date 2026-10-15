@@ -1,0 +1,39 @@
+{
+  "name": "@lexnur/pipeline",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json",
+    "cli": "tsx src/cli.ts",
+    "catalog": "tsx src/cli.ts catalog",
+    "build:oewn": "tsx src/cli.ts build oewn-2025",
+    "build:cc-cedict": "tsx src/cli.ts build cc-cedict",
+    "build:wiktionary-ar-en": "tsx src/cli.ts build wiktionary-ar-en",
+    "build:wiktionary-en": "tsx src/cli.ts build wiktionary-en",
+    "build:salmone-1889": "tsx src/cli.ts build salmone-1889",
+    "build:lane-lexicon": "tsx src/cli.ts build lane-lexicon",
+    "build:wiktionary-en-ar": "tsx src/cli.ts build wiktionary-en-ar",
+    "build:wiktionary-en-fr": "tsx src/cli.ts build wiktionary-en-fr",
+    "build:wiktionary-en-ja": "tsx src/cli.ts build wiktionary-en-ja",
+    "build:wiktionary-en-zh": "tsx src/cli.ts build wiktionary-en-zh",
+    "build:wiktionary-fr-en": "tsx src/cli.ts build wiktionary-fr-en",
+    "build:wiktionary-fr-ar": "tsx src/cli.ts build wiktionary-fr-ar",
+    "build:wiktionnaire-fr": "tsx src/cli.ts build wiktionnaire-fr",
+    "build:wiktionnaire-fr-ar": "tsx src/cli.ts build wiktionnaire-fr-ar",
+    "build:awn4-en-ar": "tsx src/cli.ts build awn4-en-ar",
+    "build:jmdict-en": "tsx src/cli.ts build jmdict-en",
+    "build:fixture": "tsx src/cli.ts fixture",
+    "publish": "tsx src/cli.ts publish"
+  },
+  "dependencies": {
+    "@lexnur/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.3"
+  }
+}

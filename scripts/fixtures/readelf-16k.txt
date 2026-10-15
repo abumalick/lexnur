@@ -1,0 +1,11 @@
+Elf file type is DYN (Shared object file)
+Entry point 0x0
+There are 9 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x0001f8 0x0001f8 R   0x8
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0b2f10 0x0b2f10 R E 0x4000
+  LOAD           0x0b4000 0x00000000000b4000 0x00000000000b4000 0x0019a0 0x002a18 RW  0x4000
+  DYNAMIC        0x0b5000 0x00000000000b5000 0x00000000000b5000 0x0001d0 0x0001d0 RW  0x8
+  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x0

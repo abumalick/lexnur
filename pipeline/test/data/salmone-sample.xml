@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "http://www.tei-c.org/Guidelines/DTD/tei2.dtd" [
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % PersDict PUBLIC "-//Perseus P4//DTD Perseus Dictionaries//EN" "http://www.perseus.tufts.edu/DTD/1.0/PersDict.dtd" >
+%PersDict;
+]>
+<TEI.2><text><body>
+			<div2 part="N" n="'bb" org="uniform" sample="complete" type="root">
+				<entryFree opt="n" key="A^ab~a" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A^ab~a
+						</orth>
+						<itype opt="n" type="vowel">
+							I
+						</itype>
+						, 
+						<itype opt="n" type="vowel">
+							U
+						</itype>
+						(
+						<form opt="n">
+							<mood opt="n">
+								n. ac.
+							</mood>
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^ab~
+								</orth>
+								<itype opt="n">
+									1
+								</itype>
+							</form>
+							, 
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^abaAob
+								</orth>
+								<itype opt="n">
+									22
+								</itype>
+							</form>
+							, 
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^abaAobap
+								</orth>
+								<itype opt="n">
+									22t
+								</itype>
+							</form>
+							, 
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^abiyob
+								</orth>
+								<itype opt="n">
+									25
+								</itype>
+							</form>
+						</form>
+						) 
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							[
+							<gramGrp opt="n">
+								<subc opt="n">
+									La
+								</subc>
+							</gramGrp>
+							], Prepared, got ready to, for. 
+						</dictScrap>
+					</sense>
+					<sense n="b" opt="n">
+						<dictScrap>
+							[
+							<gramGrp opt="n">
+								<subc opt="n">
+									Ila
+								</subc>
+							</gramGrp>
+							], Yearned for, longed to see (
+							<usg opt="n">
+								home
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A_isotaA^obaba" type="main">
+					<form opt="n">
+						<orth orig="" extent="full" opt="n" lang="ar">
+							A_isotaA^obaba
+						</orth>
+						<itype opt="n" type="conj">
+							X
+						</itype>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Adopted as father.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^ab~" type="main">
+					<form opt="n">
+						<form opt="n" type="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A^ab~
+							</orth>
+							<itype opt="n">
+								1
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Herbage, pasture.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^ab" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A^ab
+						</orth>
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							Father (
+							<xr opt="n">
+								<lbl opt="n">
+									see
+								</lbl>
+								<ref lang="ar" targOrder="U">
+									A^abawa
+								</ref>
+							</xr>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A=b" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A=b
+						</orth>
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							August (
+							<usg opt="n">
+								month
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+					<sense n="b" opt="n">
+						<dictScrap>
+							[
+							<gramGrp opt="n">
+								<colloc opt="n">
+									art.
+								</colloc>
+							</gramGrp>
+							], The Father (
+							<usg opt="n">
+								God
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+			</div2>
+			<div2 part="N" n="'rn" org="uniform" sample="complete" type="root">
+				<entryFree opt="n" key="A^arana" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A^arana
+						</orth>
+						<itype opt="n" type="vowel">
+							U
+						</itype>
+						(
+						<form opt="n">
+							<mood opt="n">
+								n. ac.
+							</mood>
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^aron
+								</orth>
+								<itype opt="n">
+									1
+								</itype>
+							</form>
+						</form>
+						),
+					</form>
+					<sense n="a" opt="n">
+						Bit, nibbled.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^arina" type="main">
+					<form opt="n">
+						<orth orig="Bi" extent="full" opt="n" lang="ar">
+							A^arina
+						</orth>
+						<itype opt="n" type="vowel">
+							A
+						</itype>
+						(
+						<form opt="n">
+							<mood opt="n">
+								n. ac.
+							</mood>
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^aran
+								</orth>
+								<itype opt="n">
+									4
+								</itype>
+							</form>
+							, 
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A_iraAon
+								</orth>
+								<itype opt="n">
+									23
+								</itype>
+							</form>
+							, 
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^ariyon
+								</orth>
+								<itype opt="n">
+									25
+								</itype>
+							</form>
+						</form>
+						),
+					</form>
+					<sense n="a" opt="n">
+						Was energetic.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^uronap" type="main">
+					<form opt="n">
+						<form opt="n" type="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A^uronap
+							</orth>
+							<itype opt="n">
+								3t
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Green cheese.
+					</sense>
+					<sense n="b" opt="n">
+						Rennet.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A_iraAon" type="main">
+					<form opt="n">
+						<form opt="n" type="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A_iraAon
+							</orth>
+							<itype opt="n">
+								23
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Bier; coffin.
+					</sense>
+					<sense n="b" opt="n">
+						Sword.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^ariyon" type="main">
+					<form opt="n">
+						<form opt="n" type="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A^ariyon
+							</orth>
+							<itype opt="n">
+								25
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Place.
+					</sense>
+					<sense n="b" opt="n">
+						Spoilt.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^aronab" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A^aronab
+						</orth>
+						(
+						<form opt="n">
+							<number opt="n">
+								pl.
+							</number>
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^araAoni4u
+								</orth>
+								<itype opt="n">
+									47
+								</itype>
+							</form>
+						</form>
+						),
+					</form>
+					<sense n="a" opt="n">
+						Rabbit; hare.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^aronaAwuT" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A^aronaAwuT
+						</orth>
+					</form>
+					<sense n="a" opt="n">
+						Albanian.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^urowiy~ap" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							A^urowiy~ap
+						</orth>
+					</form>
+					<sense n="a" opt="n">
+						Mountain-goat : chamois.
+					</sense>
+				</entryFree>
+			</div2>
+			<div2 part="N" n="wdn" org="uniform" sample="complete" type="root">
+				<entryFree opt="n" key="wadana" type="main">
+					<form opt="n">
+						<orth extent="full" opt="n" lang="ar">
+							wadana
+						</orth>
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							[
+							<foreign lang="ar">
+								yadinu
+							</foreign>
+							<form opt="n">
+								] (
+								<form opt="n">
+									<mood opt="n">
+										n. ac.
+									</mood>
+									<form opt="n" type="n">
+										<orth orig="" extent="full" opt="n" lang="ar">
+											wadon
+										</orth>
+										<itype opt="n">
+											1
+										</itype>
+									</form>
+									, 
+									<form opt="n" type="n">
+										<orth orig="" extent="full" opt="n" lang="ar">
+											widaAon
+										</orth>
+										<itype opt="n">
+											23
+										</itype>
+									</form>
+								</form>
+							</form>
+							), Wetted, soaked.
+						</dictScrap>
+					</sense>
+					<sense n="b" opt="n">
+						<dictScrap>
+							Adorned (
+							<usg opt="n">
+								a bride
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+					<sense n="c" opt="n">
+						<dictScrap>
+							<form opt="n">
+								(
+								<form opt="n">
+									<mood opt="n">
+										n. ac.
+									</mood>
+									<form opt="n" type="n">
+										<orth orig="" extent="full" opt="n" lang="ar">
+											wadon
+										</orth>
+										<itype opt="n">
+											1
+										</itype>
+									</form>
+								</form>
+							</form>
+							), Shortened, abbreviated.
+						</dictScrap>
+					</sense>
+					<sense n="d" opt="n">
+						Beat.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="wadina" type="main">
+					<form opt="n">
+						<orth orig="Bi" extent="full" opt="n" lang="ar">
+							wadina
+						</orth>
+						<itype opt="n" type="vowel">
+							A
+						</itype>
+						(
+						<form opt="n">
+							<mood opt="n">
+								n. ac.
+							</mood>
+							<form opt="n" type="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									wadan
+								</orth>
+								<itype opt="n">
+									4
+								</itype>
+							</form>
+						</form>
+						),
+					</form>
+					<sense n="a" opt="n">
+						Bore a sickly child.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="wad~ana" type="main">
+					<form opt="n">
+						<orth orig="" extent="full" opt="n" lang="ar">
+							wad~ana
+						</orth>
+						<itype opt="n" type="conj">
+							II
+						</itype>
+						,
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							<xr opt="n">
+								<lbl opt="n">
+									see
+								</lbl>
+								<ref targOrder="U">
+									I (a)
+								</ref>
+							</xr>
+							, (
+							<usg opt="n">
+								c
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^awodana" type="main">
+					<form opt="n">
+						<orth orig="" extent="full" opt="n" lang="ar">
+							A^awodana
+						</orth>
+						<itype opt="n" type="conj">
+							IV
+						</itype>
+						,
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							<xr opt="n">
+								<lbl opt="n">
+									see
+								</lbl>
+								<ref targOrder="U">
+									I (a)
+								</ref>
+							</xr>
+							, (
+							<usg opt="n">
+								c
+							</usg>
+							) &amp; (
+							<orth orig="Bi" extent="full" opt="n" lang="ar">
+								wadina
+							</orth>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="tawad~ana" type="main">
+					<form opt="n">
+						<orth orig="" extent="full" opt="n" lang="ar">
+							tawad~ana
+						</orth>
+						<itype opt="n" type="conj">
+							V
+						</itype>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Was soft.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A_iwotadana" type="main">
+					<form opt="n">
+						<form opt="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A_iwotadana
+							</orth>
+							<itype opt="n" type="conj">
+								VIII
+							</itype>
+						</form>
+						(
+						<itype opt="n" lang="ar">
+							t
+						</itype>
+						),
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							<xr opt="n">
+								<lbl opt="n">
+									see
+								</lbl>
+								<ref targOrder="U">
+									I (a)
+								</ref>
+							</xr>
+							.
+						</dictScrap>
+					</sense>
+					<sense n="b" opt="n">
+						<dictScrap>
+							<def opt="n">
+								Pass. of
+							</def>
+							I (
+							<usg opt="n">
+								a
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^awodanu" type="main">
+					<form opt="n">
+						<form opt="n" type="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A^awodanu
+							</orth>
+							<itype opt="n">
+								14
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Soft, supple.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="wadiyon" type="main">
+					<form opt="n">
+						<form opt="n" type="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								wadiyon
+							</orth>
+							<itype opt="n">
+								25
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						Wet; soaked.
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="wadVna" type="main">
+					<form opt="n">
+						<mood opt="n">
+							N. P.
+						</mood>
+						<form opt="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								wadVna
+							</orth>
+							<itype opt="n" type="conj">
+								I
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							<xr opt="n">
+								<lbl opt="n">
+									see
+								</lbl>
+								<ref targOrder="U">
+									25
+								</ref>
+							</xr>
+							&amp; 
+							<mood opt="n">
+								N. P.
+							</mood>
+							<form opt="n">
+								<orth orig="" extent="full" opt="n" lang="ar">
+									A^awodana
+								</orth>
+								<itype opt="n" type="conj">
+									IV
+								</itype>
+							</form>
+							. 
+						</dictScrap>
+					</sense>
+					<sense n="c" opt="n">
+						<dictScrap>
+							Narrow-shouldered; shortnecked. 
+							<pb n="1193" />
+						</dictScrap>
+					</sense>
+				</entryFree>
+				<entryFree opt="n" key="A^awodana" type="main">
+					<form opt="n">
+						<mood opt="n">
+							N. P.
+						</mood>
+						<form opt="n">
+							<orth orig="" extent="full" opt="n" lang="ar">
+								A^awodana
+							</orth>
+							<itype opt="n" type="conj">
+								IV
+							</itype>
+						</form>
+						,
+					</form>
+					<sense n="a" opt="n">
+						<dictScrap>
+							Sickly (
+							<usg opt="n">
+								child
+							</usg>
+							).
+						</dictScrap>
+					</sense>
+				</entryFree>
+			</div2>
+</body></text></TEI.2>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entry view</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; line-height: 1.5; background: #fff; color: #000; }
+  h1 { font-size: 18px; } .note { font-size: 13px; color: #555; max-width: 70ch; }
+  .screens { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .phone { width: 360px; max-width: 100%; border: 2px solid #000; border-radius: 16px; overflow: hidden; }
+  .cap { font-size: 12px; font-weight: 600; margin: 0 0 6px; }
+  .bar { display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #000; }
+  .pad { padding: 12px 16px; }
+  [lang=ar] { font-family: "Noto Naskh Arabic", "Geeza Pro", serif; line-height: 1.8; }
+  .hw { font-size: 34px; font-weight: 700; }
+  .hw.en { font-family: Georgia, serif; }
+  .sub { font-size: 14px; color: #333; }
+  .chip { display: inline-block; border: 1px solid #000; border-radius: 16px; padding: 2px 10px; min-height: 32px; margin: 4px 4px 0 0; text-decoration: none; color: #000; }
+  .tabs { display: flex; gap: 8px; padding: 8px 16px; border-bottom: 1px solid #ccc; font-size: 13px; }
+  .tabs b { border-bottom: 2px solid #000; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin: 16px 0 6px; border-bottom: 1px solid #000; }
+  ol { padding-inline-start: 22px; margin: 0; } li { margin-bottom: 8px; }
+  .ex { display: block; color: #444; font-size: 14px; padding-inline-start: 10px; border-inline-start: 2px solid #ccc; margin-top: 2px; }
+  dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0; } dt { color: #444; font-size: 14px; }
+  details { border: 1px solid #000; margin: 10px 0; } summary { padding: 10px; min-height: 44px; cursor: pointer; }
+  .tablewrap { overflow-x: auto; padding: 0 10px 10px; }
+  table { border-collapse: collapse; font-size: 15px; } td, th { border: 1px solid #999; padding: 4px 8px; white-space: nowrap; }
+  a.link { color: #000; text-decoration: underline; }
+  .attr { border-top: 1px solid #000; margin-top: 16px; padding-top: 10px; font-size: 13px; color: #333; }
+  .big { font-size: 200%; }
+</style>
+</head>
+<body>
+<h1>Entry view: Arabic and English</h1>
+<p class="note">Black-and-white structure mockup. The headword carries the most weight. The root is a tappable chip that runs a root query. Long tables are collapsed and scroll inside their own box. The third screen shows the same Arabic entry at 200% text: nothing is fixed-height and diacritics need room.</p>
+
+<div class="screens">
+  <section>
+    <p class="cap">Arabic entry (English UI)</p>
+    <div class="phone">
+      <div class="bar"><span>←</span><span>Aa &nbsp; ⋮</span></div>
+      <div class="pad">
+        <div class="hw" lang="ar" dir="rtl">كَتَبَ</div>
+        <div class="sub">kataba · verb (Form I) · root <a class="chip" href="#" lang="ar">ك ت ب</a></div>
+        <h2>Verb</h2>
+        <ol>
+          <li>to write<span class="ex"><bdi lang="ar">كَتَبَ رِسَالَةً</bdi> — he wrote a letter</span></li>
+          <li>to prescribe, to decree</li>
+          <li>to compose, to author</li>
+        </ol>
+        <h2>Forms</h2>
+        <dl>
+          <dt>present</dt><dd lang="ar" dir="rtl">يَكْتُبُ</dd>
+          <dt>verbal noun</dt><dd><bdi lang="ar">كِتَابَة</bdi>, <bdi lang="ar">كِتَاب</bdi></dd>
+          <dt>active participle</dt><dd lang="ar" dir="rtl">كَاتِب</dd>
+        </dl>
+        <details><summary>Conjugation</summary>
+          <div class="tablewrap" dir="rtl" lang="ar"><table>
+            <tr><th></th><th>مفرد</th><th>مثنى</th><th>جمع</th></tr>
+            <tr><th>هو</th><td>كَتَبَ</td><td>كَتَبَا</td><td>كَتَبُوا</td></tr>
+            <tr><th>هي</th><td>كَتَبَتْ</td><td>كَتَبَتَا</td><td>كَتَبْنَ</td></tr>
+            <tr><th>أنت</th><td>كَتَبْتَ</td><td>كَتَبْتُمَا</td><td>كَتَبْتُمْ</td></tr>
+          </table></div></details>
+        <h2>Related</h2>
+        <div lang="ar" dir="rtl"><a class="chip" href="#">كِتَاب</a><a class="chip" href="#">كَاتِب</a><a class="chip" href="#">مَكْتَب</a><a class="chip" href="#">مَكْتَبَة</a></div>
+        <div class="attr">From <b>Wiktionary Arabic–English</b> · CC BY-SA 4.0 · <a class="link" href="#">Details</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cap">English entry, found in 2 dictionaries</p>
+    <div class="phone">
+      <div class="bar"><span>←</span><span>Aa &nbsp; ⋮</span></div>
+      <div class="tabs"><b>Wiktionary</b><span>WordNet</span></div>
+      <div class="pad">
+        <div class="hw en">write</div>
+        <div class="sub">/ɹaɪt/ · verb · <a class="link" href="#">wrote</a>, <a class="link" href="#">written</a></div>
+        <h2>Verb</h2>
+        <ol>
+          <li>To form letters, words or symbols on a surface in order to communicate.<span class="ex">Write your name at the top of the page.</span></li>
+          <li>To be the author of (a book, article, poem, etc.).</li>
+          <li>To send a letter to. See <a class="link" href="#">correspond</a>.</li>
+        </ol>
+        <details><summary>Etymology</summary><div class="pad">From Middle English <i>writen</i>, from Old English <i>wrītan</i>.</div></details>
+        <h2>Translations</h2>
+        <div><span class="sub">Arabic:</span> <a class="chip" href="#" lang="ar">كَتَبَ</a></div>
+        <div class="attr">From <b>Wiktionary English</b> · CC BY-SA 4.0 · <a class="link" href="#">Details</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="cap">Arabic entry at 200% text</p>
+    <div class="phone big">
+      <div class="bar"><span>←</span><span>Aa ⋮</span></div>
+      <div class="pad">
+        <div class="hw" lang="ar" dir="rtl" style="font-size:52px">شَدَّدَ</div>
+        <div class="sub">shaddada · verb (Form II)<br>root <a class="chip" href="#" lang="ar">ش د د</a></div>
+        <h2>Verb</h2>
+        <ol><li>to tighten, to strengthen</li><li>to stress, to emphasize</li></ol>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

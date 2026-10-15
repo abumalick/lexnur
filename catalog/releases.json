@@ -1,0 +1,162 @@
+{
+  "awn4-en-ar": {
+    "version": "20261011.4",
+    "entry_count": 134808,
+    "size_bytes": 11492047,
+    "installed_size_bytes": 20578304,
+    "sha256": "c2e0f87d534bf71679e40abae397b9e042363a9c2d5c2c9c8d580e09b23c33f9",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:52:48Z"
+  },
+  "cc-cedict": {
+    "version": "20261011.2",
+    "entry_count": 125114,
+    "size_bytes": 17323687,
+    "installed_size_bytes": 43450368,
+    "sha256": "95eb0bcfde0488ccb9e453b713dfa1b6a3ac378a66c1acf498d86a5650e23bff",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:53:01Z"
+  },
+  "jmdict-en": {
+    "version": "20261011.3",
+    "entry_count": 218336,
+    "size_bytes": 25252589,
+    "installed_size_bytes": 68370432,
+    "sha256": "42b5fbc4b5d4cdc67f28a5827e5f13309e8d14ff7fffe1772bc167f41a3fd001",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:53:17Z"
+  },
+  "lane-lexicon": {
+    "version": "20261011.4",
+    "entry_count": 54106,
+    "size_bytes": 12181642,
+    "installed_size_bytes": 18137088,
+    "sha256": "7218afe8920f74cc772e247350956b5f52259624b650763e3ea06bd6695170c1",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:53:33Z"
+  },
+  "oewn-2025": {
+    "version": "20261011.2",
+    "entry_count": 134891,
+    "size_bytes": 14642830,
+    "installed_size_bytes": 27394048,
+    "sha256": "3bf7f5a8398dabe0fbbd344438c91065dd053072344bf786f75d63b3791ab3ef",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:53:46Z"
+  },
+  "salmone-1889": {
+    "version": "20261011.4",
+    "entry_count": 48291,
+    "size_bytes": 2971086,
+    "installed_size_bytes": 7110656,
+    "sha256": "744dd44642ac689d3053365699a9f224a3b3f89b4a95ca6fc83e7def6e1b1eda",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:54:01Z"
+  },
+  "wiktionary-ar-en": {
+    "version": "20261011.3",
+    "entry_count": 35415,
+    "size_bytes": 13095401,
+    "installed_size_bytes": 16875520,
+    "sha256": "5da659efa424a3f10f2becef7653c77a016ec75f09db000985cfbeabc855d5e4",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:54:14Z"
+  },
+  "wiktionary-en": {
+    "version": "20261011.5",
+    "entry_count": 1461159,
+    "size_bytes": 131413140,
+    "installed_size_bytes": 232865792,
+    "sha256": "57c8a5a877d568d39c2a4fe726a0c6b765a83faddf09bf840e9b2aef4c712e31",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:54:28Z"
+  },
+  "wiktionary-en-ar": {
+    "version": "20261011.5",
+    "entry_count": 24052,
+    "size_bytes": 2214919,
+    "installed_size_bytes": 3817472,
+    "sha256": "d3fe5c1f823843d597f4e91b0e45a3705101b531c5e7b1e5b289b46bf2d90dfb",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:54:59Z"
+  },
+  "wiktionary-en-fr": {
+    "version": "20261011.5",
+    "entry_count": 76520,
+    "size_bytes": 6454244,
+    "installed_size_bytes": 10780672,
+    "sha256": "b9953ef907bdd6f0e310cc07445b494cbea0f703d9b96734cb79705e96ee95fd",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:55:12Z"
+  },
+  "wiktionary-en-ja": {
+    "version": "20261011.4",
+    "entry_count": 39098,
+    "size_bytes": 3979972,
+    "installed_size_bytes": 6635520,
+    "sha256": "f8baa86af990c293656bd7853251dcd201bd8e37d9ecfc29a547e54a856aaf5d",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:55:24Z"
+  },
+  "wiktionary-en-zh": {
+    "version": "20261011.4",
+    "entry_count": 52092,
+    "size_bytes": 5847101,
+    "installed_size_bytes": 9732096,
+    "sha256": "dec714415709dcbd61eb1fb744bf6b9f85e7f744809cafef30df299dcfa6efb6",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:55:36Z"
+  },
+  "wiktionary-fr-ar": {
+    "version": "20261011.4",
+    "entry_count": 12328,
+    "size_bytes": 1483952,
+    "installed_size_bytes": 2850816,
+    "sha256": "23a2abf785a701e7cf1a8a3f15753063e7d41d00c8b8d869f4d09d30bd2e626a",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:52:28Z"
+  },
+  "wiktionary-fr-en": {
+    "version": "20261011.7",
+    "entry_count": 398270,
+    "size_bytes": 18284877,
+    "installed_size_bytes": 42254336,
+    "sha256": "a7cd261c32ba2c0e8b9f921d2eaed4b79613552792c0510ec5a175a407551859",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:55:49Z"
+  },
+  "wiktionnaire-fr": {
+    "version": "20261011.4",
+    "entry_count": 2079825,
+    "size_bytes": 134336792,
+    "installed_size_bytes": 317718528,
+    "sha256": "ed225811e77a4bae4afdc12caf5d6df31f672ed6c898563f11365b7f19060563",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:56:16Z"
+  },
+  "wiktionnaire-fr-ar": {
+    "version": "20261011.4",
+    "entry_count": 16643,
+    "size_bytes": 1756458,
+    "installed_size_bytes": 2850816,
+    "sha256": "03e05aa8bfd401ffba0731bb34fc727ba48f007eaf454da65e8bb0b692edaaf0",
+    "source_date": "2026-10-10",
+    "schema_version": 2,
+    "published_at": "2026-10-11T18:56:04Z"
+  }
+}
