@@ -1,6 +1,6 @@
 # Lexnur
 
-Free offline dictionaries for Android and iOS: pick monolingual or translation dictionaries, download them once, and look words up without a connection. English and Arabic first.
+Free offline dictionaries for Android and iOS: pick monolingual or translation dictionaries, download them once, and look words up without a connection. English, Arabic, French, Japanese and Chinese.
 
 <a href="https://play.google.com/store/apps/details?id=com.lexnur">Get it on Google Play</a> · App Store version coming soon · https://lexnur.com
 
@@ -24,3 +24,7 @@ Start with [AGENTS.md](AGENTS.md) (layout, setup, worktree rules), then:
 - [docs/CATALOG.md](docs/CATALOG.md), [docs/SOURCES.md](docs/SOURCES.md), [docs/HOSTING.md](docs/HOSTING.md) — formats, data sources, hosting.
 
 Setup: `mise install && pnpm install && bundle install`; `just --list` shows the commands.
+
+## License
+
+The code is under the [MIT License](LICENSE). The dictionary data is not: each source keeps its own licence, listed in [docs/SOURCES.md](docs/SOURCES.md).
