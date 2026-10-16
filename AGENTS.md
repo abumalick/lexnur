@@ -31,25 +31,28 @@ Machine-specific instructions, if any, live in `CLAUDE.local.md` at the repo roo
 <!-- worktree-harness:begin -->
 ## Worktree development (required)
 
-**HARD RULE — never edit `main`'s working tree for code.** Every task that
-touches files, however small, starts by creating a worktree. The top-level
-checkout stays on `main`, always. Only `*.md`/docs edits may happen on `main`,
-and even then its branch must not change. If you catch yourself having edited
-`main`, stop and move the change into a worktree
-(`git stash push` → `scripts/worktree.sh create <branch>` → `git stash pop`).
+**HARD RULE — never edit the main checkout's working tree for code.** Every task
+that touches files, however small, starts in its own worktree. The main checkout
+stays on `main`, always; only docs edits may happen there, and
+its branch must never change. Uncommitted changes in the main checkout may belong
+to sibling agents: never commit, stash or revert them.
 
-**Lifecycle (one line per phase):**
-1. **Start** — `scripts/worktree.sh create <branch>`. It branches from `main` into
-   `.worktrees/<branch>`, copies `app/android/local.properties` and the git-ignored
-   `.env` files, and symlinks `sources/`.
-2. **Work** — edit, build and test only inside `.worktrees/<branch>`; commit there.
-3. **Finish** — once tests pass, `scripts/worktree.sh finish <branch>` merges the
-   branch into `main` with `--no-ff` (and pushes when an `origin` remote exists).
-   On a conflict it aborts: merge `main` into the branch inside the worktree,
-   resolve, then retry.
-4. **Clean up** — `scripts/worktree.sh remove <branch>` (only worktrees this
-   session created; it refuses unmerged branches), then `git worktree list` to
-   surface any worktrees other agents left open — **do not touch those**.
+- **Start** — `wt="$(scripts/worktree.sh create <branch>)" && cd "$wt"`. It prints
+  only the worktree path (folder names are slugified: never guess
+  `.worktrees/<branch>`) and starts or rebases the branch on
+  `main`. If the current checkout has no `scripts/worktree.sh`,
+  run the main checkout's copy by its absolute path.
+- **Work** — edit, run and commit only inside that path.
+- **Finish** — commit, then `scripts/worktree.sh finish <branch>` (merges into `main` with `--no-ff` and pushes when an `origin` remote exists).
+  On success it removes the worktree and the merged branch; on failure it keeps
+  them, so fix there and re-run.
+- **Clean up (mandatory)** — never leave your worktree behind.
+  `scripts/worktree.sh list` shows each worktree's merged/dirty state and stray
+  processes. Never remove a worktree another agent owns.
+
+**Worktree setup:** `create` runs `mise trust` and `pnpm install` in the new
+worktree, copies `app/android/local.properties` and the git-ignored `.env` files,
+and symlinks `sources/`.
 
 **Shared data:** `sources/` is one directory shared by every worktree. Fetch a new
 source from one place only — two worktrees downloading the same source id at once
