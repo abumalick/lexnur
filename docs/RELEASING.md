@@ -2,7 +2,7 @@
 
 How to ship an app update to Google Play and the App Store. Publishing a dictionary package or a catalog change does not need an app release: see [pipeline/README.md § Publishing a dictionary](../pipeline/README.md#publishing-a-dictionary).
 
-**Where things stand** (update this line when you ship): 1.1.0, build 2, is live on Google Play production and submitted to App Review with release after approval. The next upload needs build number 3 or higher.
+**Where things stand** (update this line when you ship): 1.1.1, build 3, is in review on Google Play production. On iOS, 1.1.0 (build 2) is waiting for App Review with release after approval; 1.1.1 is not uploaded to TestFlight yet and its App Store screenshots are not regenerated — once 1.1.0 is approved, run `just screenshots-ios`, `just ios-beta`, `just metadata-ios` and submit. The next upload needs build number 4 or higher on Android, 3 or higher on iOS.
 
 The flow, in short:
 
