@@ -1,0 +1,4 @@
+Lexnur 1.1.1: dictionaries are easier to find.
+• Both directions of a language pair, such as English–French and French–English, now sit together in one group
+• Select both directions in one tap
+• Each dictionary shows which way it translates
