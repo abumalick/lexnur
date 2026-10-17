@@ -11,10 +11,10 @@
 
   type Fn = () => void;
   let {
-    mode, title, dict, rec, job, selected = false, recommended = false, broken = false, update,
+    mode, title, dict, rec, job, direction, selected = false, recommended = false, broken = false, update,
     onToggle, onInfo, onPause, onResume, onCancel, onRetry, onDownloadNow, onDelete, onUpdate, onReinstall,
   }: {
-    mode: 'select' | 'installed' | 'job'; title: string; dict?: PublishedDictionary; rec?: InstalledRecord; job?: InstallJob;
+    mode: 'select' | 'installed' | 'job'; title: string; dict?: PublishedDictionary; rec?: InstalledRecord; job?: InstallJob; direction?: string;
     selected?: boolean; recommended?: boolean; broken?: boolean; update?: PublishedDictionary;
     onToggle?: Fn; onInfo?: Fn; onPause?: Fn; onResume?: Fn; onCancel?: Fn; onRetry?: Fn; onDownloadNow?: Fn; onDelete?: Fn; onUpdate?: Fn; onReinstall?: Fn;
   } = $props();
@@ -27,6 +27,7 @@
     <label class="main">
       <input type="checkbox" checked={selected} onchange={onToggle} aria-label={title} />
       <span class="info">
+        {#if direction}<span class="direction">{direction}</span>{/if}
         <span class="title">{title}</span>
         <span class="sec">
           {#if dict}<Chip>{$i18n.t(`difficulty.${dict.difficulty}`)}</Chip> · {formatBytes(dict.size_bytes, $i18n.lang)}{/if}
@@ -81,6 +82,7 @@
   input[type="checkbox"] { width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--md-primary); flex: none; }
   .info { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
   .title { font-weight: 600; overflow-wrap: anywhere; }
+  .direction { font-size: 0.8125rem; font-weight: 600; color: var(--md-primary); }
   .sec, .hint { font-size: 0.875rem; color: var(--md-on-surface-variant); }
   .error { color: var(--md-error); font-weight: 600; }
   .actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
