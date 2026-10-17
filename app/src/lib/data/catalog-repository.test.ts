@@ -77,6 +77,22 @@ describe('CatalogRepository', () => {
     expect(g[0].dictionaries.map((d) => d.id)).toEqual(['wiktionary-en', 'oewn-2025']);
   });
 
+  it('groups both directions of a pair together, one direction after the other', async () => {
+    const base = fixtureCatalog.dictionaries.find((d) => d.id === 'wiktionary-ar-en')!;
+    const extra = (id: string, from: string, to: string, rank = base.rank) => ({ ...base, id, from, to, rank });
+    const snapshot: PublishedCatalog = {
+      ...fixtureCatalog,
+      dictionaries: [
+        extra('wiktionary-en-ar', 'en', 'ar'), ...fixtureCatalog.dictionaries, extra('lane-lexicon', 'ar', 'en', base.rank + 1),
+        extra('wiktionary-fr-en', 'fr', 'en'), extra('wiktionary-en-fr', 'en', 'fr'), extra('wiktionnaire-fr', 'fr', 'fr'),
+      ],
+    };
+    const g = (await CatalogRepository.load({ snapshot, catalogUrl: URL_, fetch: failFetch, kv: new MemoryKv() })).groups();
+    expect(g.map((x) => `${x.from}-${x.to}`)).toEqual(['en-en', 'ar-en', 'en-fr', 'fr-fr']);
+    expect(g[1].dictionaries.map((d) => d.id)).toEqual(['wiktionary-ar-en', 'lane-lexicon', 'wiktionary-en-ar']);
+    expect(g[2].dictionaries.map((d) => d.id)).toEqual(['wiktionary-en-fr', 'wiktionary-fr-en']);
+  });
+
   it('pre-selects Wiktionary Ar–En on Arabic devices and WordNet otherwise, never Wiktionary English', async () => {
     const r = await load(failFetch);
     expect(r.defaultSelection(['ar-SA', 'en-US'])).toEqual(['wiktionary-ar-en']);

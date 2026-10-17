@@ -9,12 +9,13 @@ export interface InstalledRecord {
   installed_size_bytes: number; entry_count: number; installedAt: number;
   availability?: string;
 }
+// from/to are the pair's two languages in alphabetical order; the dictionaries run in either direction
 export interface PairGroup { from: string; to: string; dictionaries: PublishedDictionary[] }
 export interface CatalogState { available: PublishedDictionary[]; installed: InstalledRecord[] }
 
 const CACHE = 'catalog.cache';
 const INSTALLED = 'installed';
-const PAIR_ORDER = ['en-en', 'ar-en', 'en-ar'];
+const PAIR_ORDER = ['en-en', 'ar-en'];
 
 interface Deps { snapshot: PublishedCatalog; catalogUrl: string; fetch: typeof fetch; kv: KeyValueStore; appVersion?: string }
 
@@ -120,14 +121,15 @@ export class CatalogRepository extends Observable<CatalogState> {
   groups(): PairGroup[] {
     const m = new Map<string, PairGroup>();
     for (const x of this.value.available) {
-      const k = `${x.from}-${x.to}`;
-      if (!m.has(k)) m.set(k, { from: x.from, to: x.to, dictionaries: [] });
+      const [from, to] = [x.from, x.to].sort();
+      const k = `${from}-${to}`;
+      if (!m.has(k)) m.set(k, { from, to, dictionaries: [] });
       m.get(k)!.dictionaries.push(x);
     }
     const idx = (k: string) => { const i = PAIR_ORDER.indexOf(k); return i < 0 ? PAIR_ORDER.length : i; };
     return [...m.entries()]
       .sort(([a], [b]) => idx(a) - idx(b) || a.localeCompare(b))
-      .map(([, g]) => ({ ...g, dictionaries: [...g.dictionaries].sort((a, b) => a.rank - b.rank || a.size_bytes - b.size_bytes) }));
+      .map(([, g]) => ({ ...g, dictionaries: [...g.dictionaries].sort((a, b) => a.from.localeCompare(b.from) || a.rank - b.rank || a.size_bytes - b.size_bytes) }));
   }
 
   forStore(): InstalledDictionary[] {

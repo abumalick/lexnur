@@ -58,6 +58,16 @@ describe('LibraryScreen (onboarding)', () => {
 describe('LibraryScreen (manage)', () => {
   const route = { name: 'library' } as const;
 
+  it('selects every dictionary of a group at once', async () => {
+    const { context } = await makeTestContext({ deviceLanguages: ['en-US'] });
+    render(LibraryScreen, { props: { route }, context });
+    expect(await screen.findByRole('heading', { name: 'English' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Arabic ↔ English' })).toBeTruthy();
+    await fireEvent.click(screen.getByRole('button', { name: 'Select both' }));
+    expect(screen.getByRole('button', { name: 'Download (2)' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Select both' })).toBeNull();
+  });
+
   it('offers Reinstall for a broken package and reinstalls through the installer', async () => {
     const { context, ctx, native } = await makeTestContext({ installed: ['oewn-2025'] });
     await ctx.store.setInstalled(ctx.catalog.forStore().map((d) => ({ ...d, relativePath: 'missing.sqlite' })));

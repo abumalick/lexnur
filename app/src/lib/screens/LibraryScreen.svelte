@@ -49,6 +49,12 @@
     } catch { /* defaults stay empty; the user can still pick */ }
   });
 
+  const unchecked = (items: PublishedDictionary[]) => items.filter((d) => !selected.has(d.id) && !installedIds.has(d.id) && !$installer.has(d.id));
+
+  function selectAll(items: PublishedDictionary[]) {
+    selected = new Set([...selected, ...items.map((d) => d.id)]);
+  }
+
   function toggle(id: string) {
     const s = new Set(selected);
     if (s.has(id)) s.delete(id); else s.add(id);
@@ -133,10 +139,19 @@
   {#if !onboarding}<div class="section"><h2>{$i18n.t('library.available')}</h2></div>{/if}
   {#each groups as g (g.from + g.to)}
     {@const items = g.dictionaries.filter((d) => onboarding || !installedIds.has(d.id))}
+    {@const open = unchecked(items)}
     {#if items.length}
-      <h3 class="pair">{$i18n.t('pair', { from: $i18n.t(`lang.${g.from}`), to: $i18n.t(`lang.${g.to}`) })}</h3>
+      <div class="pair">
+        <h3 id="pair-{g.from}-{g.to}">{g.from === g.to ? $i18n.t(`lang.${g.from}`) : $i18n.t('pair_both', { a: $i18n.t(`lang.${g.from}`), b: $i18n.t(`lang.${g.to}`) })}</h3>
+        {#if open.length > 1}
+          <button class="text" aria-describedby="pair-{g.from}-{g.to}" onclick={() => selectAll(open)}>
+            {$i18n.t(open.length === 2 ? 'library.select_both' : 'library.select_all')}
+          </button>
+        {/if}
+      </div>
       {#each items as d (d.id)}
         <DictionaryRow mode={$installer.has(d.id) ? 'job' : installedIds.has(d.id) ? 'installed' : 'select'} title={d.title} dict={d}
+          direction={d.from === d.to ? undefined : $i18n.t('pair', { from: $i18n.t(`lang.${d.from}`), to: $i18n.t(`lang.${d.to}`) })}
           rec={catalog.installedRecord(d.id)} job={$installer.get(d.id)} selected={selected.has(d.id)} recommended={defaults.includes(d.id)}
           onToggle={() => toggle(d.id)} onInfo={() => (details = d)} onPause={() => installer.pause(d.id)} onResume={() => installer.resume(d.id)}
           onCancel={() => askCancel(d.id)} onRetry={() => installer.retry(d.id)} onDownloadNow={() => installer.downloadNow(d.id)}
@@ -165,7 +180,8 @@
   .offline { margin-top: 8px !important; }
   .section { display: flex; align-items: center; justify-content: space-between; padding: 16px 16px 0; }
   .section h2 { margin: 0; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--md-on-surface-variant); }
-  .pair { margin: 16px 16px 4px; font-size: 0.8125rem; font-weight: 600; color: var(--md-primary); }
+  .pair { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 20px 4px 0 16px; padding-top: 12px; border-top: 1px solid var(--md-outline-variant); }
+  .pair h3 { margin: 0; font-size: 1.25rem; font-weight: 700; }
   button.text { all: unset; min-height: var(--tap); padding: 0 12px; color: var(--md-primary); cursor: pointer; }
   :global(.library > footer) { margin-top: auto; }
 </style>
